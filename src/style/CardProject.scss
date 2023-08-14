@@ -1,0 +1,98 @@
+@import "vars";
+
+.cardProject {
+  position: relative;
+  color: #fff;
+  width: 28rem;
+  height: 50rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.cardProject img {
+  height: 6rem;
+  object-fit: cover;
+  z-index: 2;
+  margin-top: calc(50% + 7.5rem);
+  transition: 0.5s;
+}
+
+.cardProject .circle {
+  position: absolute;
+  top: calc(50% - 10rem);
+  left: calc(50% - 10rem);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 10px 10px 20px #929292,
+  -10px -10px 20px #ffffff;
+}
+
+.cardProject:hover .circle {
+  width: 100%;
+  height: 50rem;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  z-index: 0;
+  opacity: 1;
+  transition: 0.5s;
+}
+.cardProject .content {
+  z-index: 0;
+  opacity: 0;
+  width: 30rem;
+}
+.cardProject .content h3 {
+  margin-top: 2rem;
+  color: #777;
+  text-transform: capitalize;
+}
+.cardProject .content p {
+  color: #777;
+  height: 25rem;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cardProject .content p::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.cardProject:hover .content {
+  opacity: 1;
+  width: 28rem;
+  height: 41rem;
+  padding: 0 3rem;
+  transform: translateY(-19.5rem);
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardProject .content  a{
+  position: relative;
+  padding: 10px 20px;
+  margin: 3rem 0 2rem 0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 10px 10px 20px #929292, -10px -10px 20px #ffffff;
+  color: #000;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+.cardProject:hover img {
+  transform: translateY(-19rem);
+  transition: 0.5s;
+}
