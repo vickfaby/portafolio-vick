@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../style/CardProject.scss";
 
+function CardProject( { img,imgBackground, title, text, link }) {
 
-function CardProject( { img, title, text, link }) {
+  useEffect(()=>{
+    document.getElementById(`circle-${title}`).style.backgroundImage = `url(${imgBackground})`
+  },[])
+
   return (
     <div className="cardProject">
       <img src={img} alt="logo de pokemon" />
-
-      <div className="circle"></div>
+      <h1>{title}</h1>
+      <div className="circle" id={`circle-${title}`}  ></div>
       <div className="content">
         <h3>{title}</h3>
         <p>

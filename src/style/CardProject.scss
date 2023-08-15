@@ -17,21 +17,25 @@
   height: 6rem;
   object-fit: cover;
   z-index: 2;
-  margin-top: calc(50% + 7.5rem);
+  margin-top: calc(50% + 4.5rem);
   transition: 0.5s;
 }
+.cardProject h1{
 
+  color:#b3b3b3;
+}
 .cardProject .circle {
   position: absolute;
-  top: calc(50% - 10rem);
-  left: calc(50% - 10rem);
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
+  /* top: calc(50% - 10rem); */
+  /* left: calc(50% - 10rem); */
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 10px 10px 20px #929292,
-  -10px -10px 20px #ffffff;
+  box-shadow: 10px 10px 20px #929292, -10px -10px 20px #ffffff;
+  filter: blur(8px);
+  opacity: 0.5;
 }
 
 .cardProject:hover .circle {
@@ -54,6 +58,7 @@
   color: #777;
   text-transform: capitalize;
 }
+
 .cardProject .content p {
   color: #777;
   height: 25rem;
@@ -71,11 +76,17 @@
   width: 28rem;
   height: 41rem;
   padding: 0 3rem;
-  transform: translateY(-19.5rem);
+  transform: translateY(-18.5rem);
   transition: 0.5s;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #eeeeee;
+}
+
+.cardProject:hover h1 {
+  display: none;
+  transition: 0.5s;
 }
 
 .cardProject .content  a{
@@ -93,6 +104,8 @@
 
 
 .cardProject:hover img {
-  transform: translateY(-19rem);
+  transform: translateY(-12rem);
   transition: 0.5s;
+  scale: 1.5;
 }
+
