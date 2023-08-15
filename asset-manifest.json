@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/portafolio-vick/static/css/main.276ab39f.css",
-    "main.js": "/portafolio-vick/static/js/main.0c5a7d6c.js",
+    "main.css": "/portafolio-vick/static/css/main.f56ef88d.css",
+    "main.js": "/portafolio-vick/static/js/main.53d1cb57.js",
     "static/media/photo_port.jpeg": "/portafolio-vick/static/media/photo_port.468064aef07e849fff4d.jpeg",
     "static/media/photo_perfil.jpeg": "/portafolio-vick/static/media/photo_perfil.2786cec230deba8960fc.jpeg",
+    "static/media/screenMovies.png": "/portafolio-vick/static/media/screenMovies.df4c8a7cf205a3e438d6.png",
+    "static/media/screenPokedex.png": "/portafolio-vick/static/media/screenPokedex.b9f51e03aaa520437e92.png",
     "static/media/movies.png": "/portafolio-vick/static/media/movies.1fe483b71514ff08ce2f.png",
+    "static/media/screenNotes.png": "/portafolio-vick/static/media/screenNotes.0fcf22d5d7b8f53f27c3.png",
     "static/media/pokemon.png": "/portafolio-vick/static/media/pokemon.0e47b7255a9b490c1188.png",
     "static/media/js.png": "/portafolio-vick/static/media/js.2b7c06de195be0dfb13e.png",
     "static/media/css.png": "/portafolio-vick/static/media/css.db2df83ac6aefb1dd4dd.png",
@@ -13,11 +16,11 @@
     "static/media/react.png": "/portafolio-vick/static/media/react.0ab11dbd69c8fc8c36f5.png",
     "static/media/node.png": "/portafolio-vick/static/media/node.479db3452c7570df3e69.png",
     "index.html": "/portafolio-vick/index.html",
-    "main.276ab39f.css.map": "/portafolio-vick/static/css/main.276ab39f.css.map",
-    "main.0c5a7d6c.js.map": "/portafolio-vick/static/js/main.0c5a7d6c.js.map"
+    "main.f56ef88d.css.map": "/portafolio-vick/static/css/main.f56ef88d.css.map",
+    "main.53d1cb57.js.map": "/portafolio-vick/static/js/main.53d1cb57.js.map"
   },
   "entrypoints": [
-    "static/css/main.276ab39f.css",
-    "static/js/main.0c5a7d6c.js"
+    "static/css/main.f56ef88d.css",
+    "static/js/main.53d1cb57.js"
   ]
 }
