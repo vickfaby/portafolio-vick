@@ -12,41 +12,70 @@ import pokemonLogo from "../src/assets/images/pokemon.png";
 import notesLogo from "../src/assets/images/notesLogo.png";
 import moviesLogo from "../src/assets/images/movies.png";
 
-import screenPokedex from "../src/assets/images/screenPokedex.png"
-import screenNotes from "../src/assets/images/screenNotes.png"
-import screenMovies from "../src/assets/images/screenMovies.png"
+import screenPokedex from "../src/assets/images/screenPokedex.png";
+import screenNotes from "../src/assets/images/screenNotes.png";
+import screenMovies from "../src/assets/images/screenMovies.png";
+import { useState } from "react";
 
 function App() {
   const pokedexData = {
     title: "Pokedex",
     img: pokemonLogo,
-    imgBackground:screenPokedex,
+    imgBackground: screenPokedex,
     text: "Es un proyecto desarrollado en React.js consumiendo los datos de una API REST llamada pokeApi, el fin de este proyecto es aplicar los conocimientos aprendidos en React.js.",
     link: "https://vickfaby.github.io/vick-pokedex/",
   };
 
   const notesData = {
-    title: "Todo-notes",
+    title: "Notes",
     img: notesLogo,
-    imgBackground:screenNotes,
+    imgBackground: screenNotes,
     text: "Esta webpage desarrollada con React.js, tiene como funcionalidad crear, leer y editar notas de manera intuitiva, aplicando técnicas de una UX intuitiva y responsive.",
     link: "https://vickfaby.github.io/todo-notes/",
   };
 
   const moviesData = {
-    title: "movies",
+    title: "Movies",
     img: moviesLogo,
-    imgBackground:screenMovies,
+    imgBackground: screenMovies,
     text: "Una sencilla página web que se encarga de tenerte al tanto de las novedades en películas y que te permite alamcenar tus favoritas.",
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
   };
 
+
+  const setFixedBar = () => {
+    console.log(document.documentElement.scrollTop)
+    const element = document.getElementById("titleDiv");
+    const nameLogoH1 = document.getElementById("nameLogo");
+    const descriptionLogoP = document.getElementById("descriptionLogo");
+      element.style.height = '4rem';
+      descriptionLogoP.style.display = 'none';
+      nameLogoH1.style.fontSize = '4rem';
+      nameLogoH1.style.height = '4rem';
+      
+      if(element.clientHeight > 160){
+        element.scrollIntoView()
+        document.documentElement.scrollTo(0,0)
+      }
+    
+  };
+
+  
+  window.addEventListener("touchmove" || 'scroll', ()=> { requestAnimationFrame(()=>{
+    setFixedBar();
+  })});
+  window.addEventListener('scroll', ()=> { requestAnimationFrame(()=>{
+    setFixedBar();
+  })});
+
+
+
   return (
     <div className="App">
       <section>
-        <div className="title">
-          <h1>Vick</h1>
-          <p>Frontend Developer</p>
+        <div className="title" id="titleDiv">
+          <h1 id="nameLogo">Vick</h1>
+          <p id="descriptionLogo">Frontend Developer</p>
         </div>
       </section>
 
@@ -54,6 +83,9 @@ function App() {
         <div className="info-profile">
           <div className="profile-img">
             <img src={photoPort} alt="" />
+          </div>
+          <div className="profile-photo">
+            <img src={photoPerfil} alt="" />
           </div>
           <div className="profile-info">
             <div className="profile-data">
@@ -83,7 +115,7 @@ function App() {
                 <li>Use of figma</li>
               </ul>
               <br />
-              <p>Expirience:</p>
+              <p>Experience:</p>
               <ul>
                 <li>Global Primex Tecnología - 1yr</li>
               </ul>
@@ -100,9 +132,12 @@ function App() {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="profile-photo">
-            <img src={photoPerfil} alt="" />
+            <div className="profile-download">
+              <a href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
+                <span className="fa-solid fa-download"></span>
+                Donwload cv
+              </a>
+            </div>
           </div>
         </div>
 
@@ -143,7 +178,8 @@ function App() {
       </main>
 
       <footer>
-        <p>Vickfaby</p>
+        <h3>Created by</h3>
+        <p>Vick</p>
       </footer>
     </div>
   );

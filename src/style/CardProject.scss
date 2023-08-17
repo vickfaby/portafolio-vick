@@ -9,9 +9,11 @@
   display: flex;
   align-items: center;
   transition: 0.5s;
-  margin: 1rem;
+  margin-right: 4rem;
+  margin-left: 1rem;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .cardProject img {
   height: 6rem;
@@ -21,7 +23,6 @@
   transition: 0.5s;
 }
 .cardProject h1{
-
   color:#b3b3b3;
 }
 .cardProject .circle {
@@ -63,6 +64,7 @@
   color: #777;
   height: 25rem;
   overflow-y: scroll;
+  text-align: center;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }

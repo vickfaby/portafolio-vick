@@ -3,12 +3,14 @@
 .title {
   position: relative;
   height: calc(100vh);
+  // min-height: 130px;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ transition: 1.8s;
 }
-
 .title::before {
   content: "";
   position: absolute;
@@ -28,7 +30,9 @@
   font-size: 10rem;
   font-family: var(--font-vick);
   height: 10rem;
+  margin-top: 1rem;
   z-index: 1;
+  transition: 1s;
 }
 
 .title p {
@@ -75,16 +79,16 @@ main .profile-info {
 main .profile-info .profile-data h4 {
   color: #777;
   font-weight: 100;
-  
 }
 main .profile-info .profile-data p {
   color: #777;
   text-align: start;
   font-size: 1.6rem;
+  font-weight: 400;
 }
 
 main .profile-info .profile-data {
-  margin: 4rem 2rem 4rem 4rem;
+  margin: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -115,7 +119,7 @@ main .profile-info .profile-contact {
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  margin: 4rem 2rem;
+  margin: 4rem 2rem 6rem 2rem;
 }
 
 main .profile-info .profile-contact ul {
@@ -139,6 +143,29 @@ main .profile-info .profile-contact ul li a {
 main .profile-info .profile-contact ul li span {
   color: #858585;
 }
+
+main .profile-info .profile-download  a {
+  text-decoration: none;
+  position: absolute;
+  display: flex;
+  top: calc(100% - 4rem);
+  // left: calc(50% - 10rem);
+  // width: 20.8rem;
+  padding: 1rem 2rem;
+  border: 1rem solid #fff;
+  border-radius: 4rem;
+  background:#3559B7;
+  justify-content: space-between;
+  color: #fff;
+  align-items: baseline;
+  z-index: 1;
+}
+main .profile-info .profile-download  a:hover{
+  scale: 1.1;
+}
+main .profile-info .profile-download  a  span {
+  margin-right: 1rem;
+}
 main .info-profile .profile-photo {
   position: absolute;
   width: 16rem;
@@ -160,9 +187,9 @@ main .info-projects {
   // width: 90%;
   background: #e0e0e0;
   // border-radius: 2rem;
-  margin: 2rem auto;
+  margin: 4rem auto 0 auto;
   font-size: 2rem;
-  padding: 2rem;
+  padding: 2rem 2rem 8rem 2rem;
 }
 main .info-projects h2 {
   font-size: 3rem;
@@ -170,7 +197,7 @@ main .info-projects h2 {
 main .info-projects p {
   color: #777;
   font-size: 1.6rem;
-  margin-top: 2rem;
+  margin: 3rem 0 4rem 0;
 }
 
 main .info-projects .about-me {
@@ -190,11 +217,28 @@ main .info-projects .projects-me-container {
   margin-top: 2rem;
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05), inset -5px -5px 5px rgba(255, 255, 255, 0.5), 5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+    5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
 
 main .info-projects .projects-me-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+footer {
+  color: #777;
+  display: flex;
+  font-size: 1rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.8rem;
+}
+
+footer p {
+  margin-top: 0.4rem;
+  font-family: var(--font-vick);
+  font-size: 1.6rem;
+  font-weight: 700;
 }
