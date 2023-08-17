@@ -8,12 +8,13 @@
   border-radius: 20px;
   display: flex;
   align-items: center;
-  transition: 0.5s;
-  margin-right: 4rem;
+  transition: 0.1s;
+  margin-right: 0rem;
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  border: 1px solid #777;
 }
 .cardProject img {
   height: 6rem;

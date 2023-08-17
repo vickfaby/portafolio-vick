@@ -6,10 +6,11 @@
   // min-height: 130px;
   max-height: 100vh;
   display: flex;
+  margin-top: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- transition: 1.8s;
+  transition: 1.8s;
 }
 .title::before {
   content: "";
@@ -30,7 +31,6 @@
   font-size: 10rem;
   font-family: var(--font-vick);
   height: 10rem;
-  margin-top: 1rem;
   z-index: 1;
   transition: 1s;
 }
@@ -41,6 +41,26 @@
   margin-top: 0.4rem;
   z-index: 1;
 }
+
+.title #buttonLogo {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  left: calc(100% - 4rem);
+  transition: 1s;
+  display: flex;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  background: #777;
+  border-radius: 2rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  left: calc( 100% - 5rem);
+}
+
 
 
 main .info-profile {
@@ -144,7 +164,7 @@ main .profile-info .profile-contact ul li span {
   color: #858585;
 }
 
-main .profile-info .profile-download  a {
+main .profile-info .profile-download a {
   text-decoration: none;
   position: absolute;
   display: flex;
@@ -154,16 +174,16 @@ main .profile-info .profile-download  a {
   padding: 1rem 2rem;
   border: 1rem solid #fff;
   border-radius: 4rem;
-  background:#3559B7;
+  background: #3559b7;
   justify-content: space-between;
   color: #fff;
   align-items: baseline;
   z-index: 1;
 }
-main .profile-info .profile-download  a:hover{
+main .profile-info .profile-download a:hover {
   scale: 1.1;
 }
-main .profile-info .profile-download  a  span {
+main .profile-info .profile-download a span {
   margin-right: 1rem;
 }
 main .info-profile .profile-photo {
@@ -216,7 +236,8 @@ main .info-projects .projects-me-container {
   overflow-y: hidden;
   margin-top: 2rem;
   border-radius: 2rem;
-  padding: 2rem;
+  border: 4px solid transparent;
+  padding: 1rem 0rem;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
     inset -5px -5px 5px rgba(255, 255, 255, 0.5),
     5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);

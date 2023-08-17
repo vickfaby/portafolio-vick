@@ -15,9 +15,10 @@ import moviesLogo from "../src/assets/images/movies.png";
 import screenPokedex from "../src/assets/images/screenPokedex.png";
 import screenNotes from "../src/assets/images/screenNotes.png";
 import screenMovies from "../src/assets/images/screenMovies.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [viewport, setViewport] = useState("vacio");
   const pokedexData = {
     title: "Pokedex",
     img: pokemonLogo,
@@ -42,33 +43,80 @@ function App() {
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
   };
 
-
   const setFixedBar = () => {
-    console.log(document.documentElement.scrollTop)
+    // console.log(document.documentElement.scrollTop);
     const element = document.getElementById("titleDiv");
     const nameLogoH1 = document.getElementById("nameLogo");
     const descriptionLogoP = document.getElementById("descriptionLogo");
-      element.style.height = '4rem';
-      descriptionLogoP.style.display = 'none';
-      nameLogoH1.style.fontSize = '4rem';
-      nameLogoH1.style.height = '4rem';
-      
-      if(element.clientHeight > 160){
-        element.scrollIntoView()
-        document.documentElement.scrollTo(0,0)
-      }
-    
+    const buttonLogo = document.getElementById("buttonLogo");
+
+    element.style.height = "4rem";
+    descriptionLogoP.style.display = "none";
+    nameLogoH1.style.fontSize = "4rem";
+    nameLogoH1.style.height = "4rem";
+    buttonLogo.style.opacity = "1";
+    buttonLogo.style.transform = "rotate(0deg)";
+
+    if (element.clientHeight > 160) {
+      element.scrollIntoView();
+      document.documentElement.scrollTo(0, 0);
+    }
   };
 
-  
-  window.addEventListener("touchmove" || 'scroll', ()=> { requestAnimationFrame(()=>{
-    setFixedBar();
-  })});
-  window.addEventListener('scroll', ()=> { requestAnimationFrame(()=>{
-    setFixedBar();
-  })});
+  window.addEventListener("touchmove", () => {
+    requestAnimationFrame(() => {
+      setFixedBar();
+    });
+  });
 
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(() => {
+      setFixedBar();
+    });
+  });
 
+  useEffect(() => {
+    const goUp = () => {
+      const element = document.getElementById("titleDiv");
+      const descriptionLogoP = document.getElementById("descriptionLogo");
+      const nameLogoH1 = document.getElementById("nameLogo");
+      const buttonLogo = document.getElementById("buttonLogo");
+
+      console.log(`Entra a la funcion y va a poner ${viewport}`);
+      element.style.height = viewport;
+      descriptionLogoP.style.display = "block";
+      nameLogoH1.style.fontSize = "10rem";
+      nameLogoH1.style.height = "10rem";
+      buttonLogo.style.opacity = "0";
+      buttonLogo.style.transform = "rotate(180deg)";
+    };
+
+    const element = document.getElementById("titleDiv");
+    const buttonLogo = document.getElementById("buttonLogo");
+    setViewport(`${element.clientHeight}px`);
+    console.log(`setea al viewport en ${element.clientHeight}px`);
+    buttonLogo.addEventListener("click", goUp);
+
+    const containerProjects = document.getElementById("projects-me-container");
+    containerProjects.addEventListener("wheel", (Event) => {
+      var delta = Event.deltaY;
+      containerProjects.scrollLeft += delta;
+      Event.preventDefault();
+    });
+
+    document.documentElement.addEventListener("wheel", () => {
+      console.log(
+        `el height es ${document.documentElement.clientHeight}px y el viewpoer es ${viewport}`
+      );
+      if (`${document.documentElement.clientHeight}px` === `${viewport}`) {
+        console.log(
+          `detecta el wheel y el height es ${document.documentElement.clientHeight}`
+        );
+
+        goUp();
+      }
+    });
+  }, [viewport]);
 
   return (
     <div className="App">
@@ -76,6 +124,7 @@ function App() {
         <div className="title" id="titleDiv">
           <h1 id="nameLogo">Vick</h1>
           <p id="descriptionLogo">Frontend Developer</p>
+          <span id="buttonLogo" className="fa-solid fa-arrow-up"></span>
         </div>
       </section>
 
@@ -150,7 +199,7 @@ function App() {
               dandole lugar a la creatividad a la hora de diseñar sus
               correspondientes UX/UI.
             </p>
-            <div className="projects-me-container">
+            <div className="projects-me-container" id="projects-me-container">
               <CardProject
                 img={pokedexData.img}
                 imgBackground={pokedexData.imgBackground}

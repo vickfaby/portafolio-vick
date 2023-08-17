@@ -8,7 +8,7 @@ function CardProject( { img,imgBackground, title, text, link }) {
   },[])
 
   return (
-    <div className="cardProject">
+    <div className="cardProject" id={`cardProject-${title}`}>
       <img src={img} alt="logo de pokemon" />
       <h1>{title}</h1>
       <div className="circle" id={`circle-${title}`}  ></div>
