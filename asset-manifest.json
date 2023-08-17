@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portafolio-vick/static/css/main.37c00717.css",
-    "main.js": "/portafolio-vick/static/js/main.02105e06.js",
+    "main.css": "/portafolio-vick/static/css/main.4c79e998.css",
+    "main.js": "/portafolio-vick/static/js/main.7b763140.js",
     "static/media/photo_port.jpeg": "/portafolio-vick/static/media/photo_port.468064aef07e849fff4d.jpeg",
     "static/media/photo_perfil.jpeg": "/portafolio-vick/static/media/photo_perfil.2786cec230deba8960fc.jpeg",
     "static/media/screenMovies.png": "/portafolio-vick/static/media/screenMovies.df4c8a7cf205a3e438d6.png",
@@ -16,11 +16,11 @@
     "static/media/react.png": "/portafolio-vick/static/media/react.0ab11dbd69c8fc8c36f5.png",
     "static/media/node.png": "/portafolio-vick/static/media/node.479db3452c7570df3e69.png",
     "index.html": "/portafolio-vick/index.html",
-    "main.37c00717.css.map": "/portafolio-vick/static/css/main.37c00717.css.map",
-    "main.02105e06.js.map": "/portafolio-vick/static/js/main.02105e06.js.map"
+    "main.4c79e998.css.map": "/portafolio-vick/static/css/main.4c79e998.css.map",
+    "main.7b763140.js.map": "/portafolio-vick/static/js/main.7b763140.js.map"
   },
   "entrypoints": [
-    "static/css/main.37c00717.css",
-    "static/js/main.02105e06.js"
+    "static/css/main.4c79e998.css",
+    "static/js/main.7b763140.js"
   ]
 }
