@@ -185,6 +185,11 @@ main .profile-info .profile-contact ul li span {
   color: #858585;
 }
 
+main .info-profile .profile-info .profile-download{
+    position: relative;
+}
+
+
 main .profile-info .profile-download a {
   text-decoration: none;
   position: absolute;
@@ -272,6 +277,7 @@ footer p {
 @media (min-width:640px ){
   main {
     display: flex;
+    height: 100vh;
   }
 
   main .info-profile {
@@ -281,6 +287,7 @@ footer p {
   }
   main .info-profile .profile-img {
     width: 100%;
+    height: auto;
   }
 
   main .profile-info {
@@ -310,6 +317,9 @@ footer p {
 }
 
 @media (min-width:1024px ){
+  main{
+    height: 100vh;
+  }
   main .info-profile {
     width: 40vw;
     min-width: 40vw;
@@ -320,6 +330,7 @@ footer p {
   main .info-profile .profile-img{
     width: 85%;
     margin: 1rem 0;
+    height: auto;
   }
   main .profile-info {
     width: 85%;
@@ -333,4 +344,8 @@ footer p {
     left: -8rem;
   }
 
+
+  footer {
+    margin-top: 20rem;
+  }
 }
