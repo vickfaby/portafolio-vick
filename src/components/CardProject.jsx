@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../style/CardProject.scss";
+import shotsPokemons from  '../assets/images/shotsPokemon.png'
 
 function CardProject( { img,imgBackground, title, text, link }) {
 
@@ -17,6 +18,7 @@ function CardProject( { img,imgBackground, title, text, link }) {
         <p>
           {text}
         </p>
+        <img src={shotsPokemons} alt="" />
         <a href={link}>Visit</a>
       </div>
     </div>

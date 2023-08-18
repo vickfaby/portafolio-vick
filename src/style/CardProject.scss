@@ -17,13 +17,14 @@
   border: 1px solid #777;
   background: #fff;
 }
-.cardProject img {
+.cardProject >  img {
   height: 6rem;
   object-fit: cover;
   z-index: 2;
   margin-top: calc(50% + 4.5rem);
   transition: 0.5s;
 }
+
 .cardProject h1{
   color:#b3b3b3;
 }
@@ -107,9 +108,35 @@
 }
 
 
-.cardProject:hover img {
+.cardProject:hover img:nth-child(1) {
   transform: translateY(-12rem);
   transition: 0.5s;
   scale: 1.5;
 }
 
+.cardProject:hover .content img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+@media (min-width:1024px){
+  .cardProject{
+    width: 48rem ;
+    height: 87rem;
+  }
+  .cardProject .content {
+    width: auto;
+  }
+  .cardProject:hover img:nth-child(1){
+    transform: translateY(-9rem);
+    scale: 2.5;
+  }
+  .cardProject:hover .content {
+    width: 48rem;
+    height: 65rem;
+    transform: translateY(-22.5rem);
+  }
+  .cardProject:hover .circle {
+    height: 87rem;
+  }
+}
