@@ -58,16 +58,17 @@ function App() {
     buttonLogo.style.transform = "rotate(0deg)";
 
     if (element.clientHeight > 160) {
-      element.scrollIntoView();
-      document.documentElement.scrollTo(0, 0);
+      // element.scrollIntoView();
+      document.documentElement.scrollTo(0, 1);
+      
     }
   };
 
-  window.addEventListener("touchmove", () => {
-    requestAnimationFrame(() => {
-      setFixedBar();
-    });
-  });
+  // window.addEventListener("touchmove", () => {
+  //   requestAnimationFrame(() => {
+  //     setFixedBar();
+  //   });
+  // });
 
   window.addEventListener("scroll", () => {
     requestAnimationFrame(() => {
@@ -77,6 +78,7 @@ function App() {
 
   useEffect(() => {
     const goUp = () => {
+      console.log('Se activó GoUP()')
       const element = document.getElementById("titleDiv");
       const descriptionLogoP = document.getElementById("descriptionLogo");
       const nameLogoH1 = document.getElementById("nameLogo");
@@ -89,31 +91,50 @@ function App() {
       nameLogoH1.style.height = "10rem";
       buttonLogo.style.opacity = "0";
       buttonLogo.style.transform = "rotate(180deg)";
+
     };
 
     const element = document.getElementById("titleDiv");
     const buttonLogo = document.getElementById("buttonLogo");
+
     setViewport(`${element.clientHeight}px`);
     console.log(`setea al viewport en ${element.clientHeight}px`);
     buttonLogo.addEventListener("click", goUp);
 
     const containerProjects = document.getElementById("projects-me-container");
     containerProjects.addEventListener("wheel", (Event) => {
-      var delta = Event.deltaY;
-      containerProjects.scrollLeft += delta;
+      console.log('se ejecuta la funcion de containerProjects')
       Event.preventDefault();
+      var delta = Event.deltaY;
+      containerProjects.scrollLeft += delta/10;
     });
 
     document.documentElement.addEventListener("wheel", () => {
       console.log(
-        `el height es ${document.documentElement.clientHeight}px y el viewpoer es ${viewport}`
+        `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
       );
-      if (`${document.documentElement.clientHeight}px` === `${viewport}`) {
+
+      if (`${document.documentElement.scrollTop}px` === `0px`) {
+
         console.log(
-          `detecta el wheel y el height es ${document.documentElement.clientHeight}`
+          `se llama goUp()`
+        );
+        goUp();
+        
+      }
+    });
+    document.documentElement.addEventListener("touchmove", () => {
+      console.log(
+        `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
+      );
+
+      if (`${document.documentElement.scrollTop}px` === `0px`) {
+
+        console.log(
+          `se llama goUp()`
         );
 
-        goUp();
+        goUp()
       }
     });
   }, [viewport]);
@@ -132,10 +153,11 @@ function App() {
         <div className="info-profile">
           <div className="profile-img">
             <img src={photoPort} alt="" />
-          </div>
-          <div className="profile-photo">
+            <div className="profile-photo">
             <img src={photoPerfil} alt="" />
           </div>
+          </div>
+
           <div className="profile-info">
             <div className="profile-data">
               <h2>Víctor Morales</h2>

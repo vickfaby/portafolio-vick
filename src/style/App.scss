@@ -71,7 +71,9 @@ main .info-profile {
   flex-direction: column;
   align-items: flex-end;
 }
-main .profile-img {
+
+main .info-profile  .profile-img {
+  position: relative;
   width: 95vw;
   margin: 1rem auto;
   height: 28%;
@@ -79,11 +81,29 @@ main .profile-img {
   background: #fff;
 }
 
-main .profile-img img {
+main .info-profile  .profile-img img {
   object-fit: cover;
   width: 100%;
   height: 20rem;
   border-radius: 2rem;
+}
+
+main .info-profile .profile-img  .profile-photo {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border: 1rem solid #eeeeee;
+  top: calc(50% - 8rem);
+  left: calc(50% - 8rem);
+  background: #fff;
+  border-radius: 8rem;
+}
+
+main .info-profile .profile-img  .profile-photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
 }
 
 main .profile-info {
@@ -120,6 +140,7 @@ main .profile-info .profile-data ul {
 }
 main .profile-info .profile-data ul li {
   display: flex;
+  text-align: start;
 }
 main .profile-info .profile-imgTechnologies {
   margin: 4rem 0rem;
@@ -168,7 +189,7 @@ main .profile-info .profile-download a {
   text-decoration: none;
   position: absolute;
   display: flex;
-  top: calc(100% - 4rem);
+  top: calc(100% - 5rem);
   // left: calc(50% - 10rem);
   // width: 20.8rem;
   padding: 1rem 2rem;
@@ -186,23 +207,7 @@ main .profile-info .profile-download a:hover {
 main .profile-info .profile-download a span {
   margin-right: 1rem;
 }
-main .info-profile .profile-photo {
-  position: absolute;
-  width: 16rem;
-  height: 16rem;
-  border: 1rem solid #eeeeee;
-  top: calc(14% - 8.5rem);
-  left: calc(50% - 8rem);
-  background: #fff;
-  border-radius: 8rem;
-}
 
-main .info-profile .profile-photo img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  border-radius: 10rem;
-}
 main .info-projects {
   // width: 90%;
   background: #e0e0e0;
@@ -262,4 +267,70 @@ footer p {
   font-family: var(--font-vick);
   font-size: 1.6rem;
   font-weight: 700;
+}
+
+@media (min-width:640px ){
+  main {
+    display: flex;
+  }
+
+  main .info-profile {
+    width: 45vw;
+    min-width: 45vw;
+    padding-left: 1rem;
+  }
+  main .info-profile .profile-img {
+    width: 100%;
+  }
+
+  main .profile-info {
+    width: 100%;
+  }
+  main .profile-info .profile-imgTechnologies{
+    flex-wrap: wrap;
+  }
+  main .profile-info .profile-contact ul{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .profile-info .profile-contact ul li{
+    justify-content: flex-start;
+  }
+  main .info-projects {
+    margin: 0;
+    background: none;
+    width: 55vw;
+  }
+  main .info-projects .projects-me-container{
+    background: #fff;
+    position: relative;
+    z-index: 1;
+  }
+  
+}
+
+@media (min-width:1024px ){
+  main .info-profile {
+    width: 40vw;
+    min-width: 40vw;
+  }
+  main .info-projects{
+    width: 60vw;
+  }
+  main .info-profile .profile-img{
+    width: 85%;
+    margin: 1rem 0;
+  }
+  main .profile-info {
+    width: 85%;
+    margin: 0;
+  }
+  main .profile-info .profile-data h2 ,main .profile-info .profile-data h4  {
+    margin: 0 0 0 auto;
+  }
+  main .info-profile .profile-img .profile-photo {
+    top: calc(100% - 8rem);
+    left: -8rem;
+  }
+
 }
