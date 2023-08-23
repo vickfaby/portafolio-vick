@@ -22,6 +22,7 @@ function App() {
   const pokedexData = {
     title: "Pokedex",
     img: pokemonLogo,
+    repo:'https://github.com/vickfaby/vick-pokedex',
     imgBackground: screenPokedex,
     text: "Es un proyecto desarrollado en React.js consumiendo los datos de una API REST llamada pokeApi, el fin de este proyecto es aplicar los conocimientos aprendidos en React.js.",
     link: "https://vickfaby.github.io/vick-pokedex/",
@@ -30,6 +31,7 @@ function App() {
   const notesData = {
     title: "Notes",
     img: notesLogo,
+    repo:'https://github.com/vickfaby/todo-notes',
     imgBackground: screenNotes,
     text: "Esta webpage desarrollada con React.js, tiene como funcionalidad crear, leer y editar notas de manera intuitiva, aplicando técnicas de una UX intuitiva y responsive.",
     link: "https://vickfaby.github.io/todo-notes/",
@@ -38,6 +40,7 @@ function App() {
   const moviesData = {
     title: "Movies",
     img: moviesLogo,
+    repo:'https://github.com/vickfaby/consumo-api-rest-movie-practico',
     imgBackground: screenMovies,
     text: "Una sencilla página web que se encarga de tenerte al tanto de las novedades en películas y que te permite alamcenar tus favoritas.",
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
@@ -63,12 +66,6 @@ function App() {
       
     }
   };
-
-  // window.addEventListener("touchmove", () => {
-  //   requestAnimationFrame(() => {
-  //     setFixedBar();
-  //   });
-  // });
 
   window.addEventListener("scroll", () => {
     requestAnimationFrame(() => {
@@ -194,12 +191,12 @@ function App() {
             <div className="profile-contact">
               <ul>
                 <li>
-                  <span className="fa-brands fa-linkedin"></span>
-                  <a href="https://github.com/vickfaby">Github</a>
+                  <span className="fa-brands fa-github"></span>
+                  <a href="https://github.com/vickfaby" rel="noreferrer" target="_blank">Github</a>
                 </li>
                 <li>
-                  <span className="fa-brands fa-github"></span>
-                  <a href="https://www.linkedin.com/in/vickfaby/">LinkedIn</a>
+                  <span className="fa-brands fa-linkedin"></span>
+                  <a href="https://www.linkedin.com/in/vickfaby/" target="_blank">LinkedIn</a>
                 </li>
               </ul>
             </div>
@@ -225,6 +222,7 @@ function App() {
               <CardProject
                 img={pokedexData.img}
                 imgBackground={pokedexData.imgBackground}
+                repo={pokedexData.repo}
                 title={pokedexData.title}
                 text={pokedexData.text}
                 link={pokedexData.link}
@@ -232,13 +230,15 @@ function App() {
               <CardProject
                 img={notesData.img}
                 imgBackground={notesData.imgBackground}
+                repo={notesData.repo}
                 title={notesData.title}
                 text={notesData.text}
                 link={notesData.link}
-              />
+                />
               <CardProject
                 img={moviesData.img}
                 imgBackground={moviesData.imgBackground}
+                repo={moviesData.repo}
                 title={moviesData.title}
                 text={moviesData.text}
                 link={moviesData.link}
