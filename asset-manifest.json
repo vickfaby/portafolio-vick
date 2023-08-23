@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/portafolio-vick/static/css/main.4be56987.css",
-    "main.js": "/portafolio-vick/static/js/main.c3930a58.js",
+    "main.css": "/portafolio-vick/static/css/main.33b3f838.css",
+    "main.js": "/portafolio-vick/static/js/main.9c8cae4f.js",
     "static/media/photo_port.jpeg": "/portafolio-vick/static/media/photo_port.502cccde3881efa74852.jpeg",
+    "static/media/shotsPokemon.png": "/portafolio-vick/static/media/shotsPokemon.456c6b37683a78cbde1d.png",
     "static/media/photo_perfil.jpeg": "/portafolio-vick/static/media/photo_perfil.c41ceaa0f7c4e6d621db.jpeg",
     "static/media/screenMovies.png": "/portafolio-vick/static/media/screenMovies.3bc372bdfc6f19ad11bb.png",
     "static/media/pokemon.png": "/portafolio-vick/static/media/pokemon.bce450cdfa3e7e06aebb.png",
@@ -15,11 +16,11 @@
     "static/media/html.png": "/portafolio-vick/static/media/html.463061f990f7d8ce0605.png",
     "static/media/notesLogo.png": "/portafolio-vick/static/media/notesLogo.8e1764a0108748d6dd68.png",
     "index.html": "/portafolio-vick/index.html",
-    "main.4be56987.css.map": "/portafolio-vick/static/css/main.4be56987.css.map",
-    "main.c3930a58.js.map": "/portafolio-vick/static/js/main.c3930a58.js.map"
+    "main.33b3f838.css.map": "/portafolio-vick/static/css/main.33b3f838.css.map",
+    "main.9c8cae4f.js.map": "/portafolio-vick/static/js/main.9c8cae4f.js.map"
   },
   "entrypoints": [
-    "static/css/main.4be56987.css",
-    "static/js/main.c3930a58.js"
+    "static/css/main.33b3f838.css",
+    "static/js/main.9c8cae4f.js"
   ]
 }
