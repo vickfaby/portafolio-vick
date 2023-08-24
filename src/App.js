@@ -15,6 +15,10 @@ import moviesLogo from "../src/assets/images/movies.png";
 import screenPokedex from "../src/assets/images/screenPokedex.png";
 import screenNotes from "../src/assets/images/screenNotes.png";
 import screenMovies from "../src/assets/images/screenMovies.png";
+
+import mockPokedex from '../src/assets/images/shotsPokemon1.png'
+import mockMovies from '../src/assets/images/shotsMovies.png'
+import mockNotes from '../src/assets/images/shotsNotes.png'
 import { useEffect, useRef, useState } from "react";
 
 function App() {
@@ -23,27 +27,30 @@ function App() {
   const pokedexData = {
     title: "Pokedex",
     img: pokemonLogo,
+    mock:mockPokedex,
     repo: "https://github.com/vickfaby/vick-pokedex",
     imgBackground: screenPokedex,
-    text: "Es un proyecto desarrollado en React.js consumiendo los datos de una API REST llamada pokeApi, el fin de este proyecto es aplicar los conocimientos aprendidos en React.js.",
+    text: "This is a project developed in React.js consuming data from a REST API called pokeApi. The purpose of this project is to apply the knowledge learned in React.js",
     link: "https://vickfaby.github.io/vick-pokedex/",
   };
 
   const notesData = {
     title: "Notes",
     img: notesLogo,
+    mock: mockNotes,
     repo: "https://github.com/vickfaby/todo-notes",
     imgBackground: screenNotes,
-    text: "Esta webpage desarrollada con React.js, tiene como funcionalidad crear, leer y editar notas de manera intuitiva, aplicando técnicas de una UX intuitiva y responsive.",
+    text: "This webpage, developed with React.js, has the functionality to create, read, and edit notes in an intuitive way, applying techniques of an intuitive and responsive UX.",
     link: "https://vickfaby.github.io/todo-notes/",
   };
 
   const moviesData = {
     title: "Movies",
     img: moviesLogo,
+    mock:mockMovies,
     repo: "https://github.com/vickfaby/consumo-api-rest-movie-practico",
     imgBackground: screenMovies,
-    text: "Una sencilla página web que se encarga de tenerte al tanto de las novedades en películas y que te permite alamcenar tus favoritas.",
+    text: "A simple website that keeps you up-to-date on the latest movies and allows you to store your favorites.",
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
   };
 
@@ -79,38 +86,36 @@ function App() {
   useEffect(() => {
     const moveToLeft = () => {
       const container = document.getElementById("projects-me-container");
-      console.log(
-        `El scrollWidth entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
-      );
+      // console.log(
+      //   `El scrollWidth entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
+      // );
       const newScroll =
         parseFloat(container.scrollLeft) +
         parseFloat(containerProjects.clientWidth);
-      console.log(`El newScroll es: ${newScroll}`);
+      // console.log(`El newScroll es: ${newScroll}`);
       container.scrollTo({
         top: 0,
         left: newScroll,
         behavior: "smooth",
       });
-
-    }
+    };
     const moveToRight = () => {
-      
       const container = document.getElementById("projects-me-container");
-      console.log(container.scrollLeft); //  AQUI VBAMOS
-      console.log(
-        `El scrollProjects entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
-      );
+      // console.log(container.scrollLeft);
+      // console.log(
+      //   `El scrollProjects entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
+      // );
       const newScroll =
         parseFloat(container.scrollLeft) -
         parseFloat(containerProjects.clientWidth);
-      console.log(`El newScroll es: ${newScroll}`);
+      // console.log(`El newScroll es: ${newScroll}`);
       container.scrollTo({
         top: 0,
         left: newScroll,
         behavior: "smooth",
       });
+    };
 
-    }
     const containerProjects = document.getElementById("projects-me-container");
     const buttonLeftProjects = document.getElementById("goLeftProjects");
     const buttonRightProjects = document.getElementById("goRightProjects");
@@ -148,37 +153,140 @@ function App() {
     const containerProjects = document.getElementById("projects-me-container");
 
     setViewport(`${element.clientHeight}px`);
-    console.log(`setea al viewport en ${element.clientHeight}px`);
+    // console.log(`setea al viewport en ${element.clientHeight}px`);
     buttonLogo.addEventListener("click", goUp);
 
     containerProjects.addEventListener("wheel", (Event) => {
-      console.log("se ejecuta la funcion de containerProjects");
+      // console.log("se ejecuta la funcion de containerProjects");
       Event.preventDefault();
       var delta = Event.deltaY;
       containerProjects.scrollLeft += delta / 10;
+      document.getElementById("touchHandTutorial").style.opacity = "0";
+      document.getElementById("touchHandTutorial").style.animation = "none";
+      document.getElementById("handTutorial").style.opacity = "0";
+
+      if (
+        containerProjects.scrollLeft > 10 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth - 80
+      ) {
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth,
+          behavior: "smooth",
+        });
+      }
+
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth - 80 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth
+      ) {
+        console.log("se quiere devolver");
+        containerProjects.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth + 10 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth * 2 - 80
+      ) {
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth * 2,
+          behavior: "smooth",
+        });
+      }
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth * 2 - 80 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth * 2
+      ) {
+        console.log("se quiere devolver");
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth,
+          behavior: "smooth",
+        });
+      }
     });
 
-    containerProjects.addEventListener("touchmove", (Event) => {
-      console.log("se ejecuta la funcion de containerProjects");
-      Event.preventDefault();
-      var delta = Event.deltaY;
-      containerProjects.scrollLeft += delta / 10;
+    containerProjects.addEventListener("touchmove", () => {
+      if (containerProjects.scrollLeft > 1) {
+        document.getElementById("touchHandTutorial").style.opacity = "0";
+        document.getElementById("touchHandTutorial").style.animation = "none";
+        document.getElementById("handTutorial").style.opacity = "0";
+        document.getElementById("handTutorial").style.animation = "none";
+      } else {
+        document.getElementById("touchHandTutorial").style.opacity = "0.5";
+        document.getElementById("touchHandTutorial").style.animation =
+          "touch-hand 2s infinite linear";
+        document.getElementById("handTutorial").style.opacity = "1";
+        document.getElementById("handTutorial").style.animation =
+          "hand 2s infinite linear";
+      }
+
+      if (
+        containerProjects.scrollLeft > 10 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth - 80
+      ) {
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth,
+          behavior: "smooth",
+        });
+      }
+
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth - 80 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth
+      ) {
+        console.log("se quiere devolver");
+        containerProjects.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth + 10 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth * 2 - 80
+      ) {
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth * 2,
+          behavior: "smooth",
+        });
+      }
+      if (
+        containerProjects.scrollLeft > containerProjects.clientWidth * 2 - 80 &&
+        containerProjects.scrollLeft < containerProjects.clientWidth * 2
+      ) {
+        console.log("se quiere devolver");
+        containerProjects.scrollTo({
+          top: 0,
+          left: containerProjects.clientWidth,
+          behavior: "smooth",
+        });
+      }
     });
 
     document.documentElement.addEventListener("wheel", () => {
-      console.log(
-        `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
-      );
+      // console.log(
+      //   `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
+      // );
 
       if (`${document.documentElement.scrollTop}px` === `0px`) {
         console.log(`se llama goUp()`);
         goUp();
       }
     });
+
     document.documentElement.addEventListener("touchmove", () => {
-      console.log(
-        `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
-      );
+      // console.log(
+      //   `el height es ${document.documentElement.scrollTop}px y el viewport es ${viewport}`
+      // );
 
       if (`${document.documentElement.scrollTop}px` === `0px`) {
         console.log(`se llama goUp()`);
@@ -187,8 +295,6 @@ function App() {
       }
     });
   }, [viewport]);
-
-
 
   return (
     <div className="App">
@@ -279,10 +385,7 @@ function App() {
           <div className="projects-me">
             <h2>Projects</h2>
             <p>
-              Los proyectos a continuación han sido desarrollados personalmente
-              para poner en práctica los conocimientos adquiridos, a su vez
-              dandole lugar a la creatividad a la hora de diseñar sus
-              correspondientes UX/UI.
+            The following projects are personal projects that I developed to practice my skills and creativity in UX/UI design.
             </p>
 
             <div className="slide-projects">
@@ -295,12 +398,13 @@ function App() {
                   id="touchHandTutorial"
                 ></span>
                 <span
-                  className="fa-solid fa-hand-pointer "
+                  className="fa-solid fa-hand-pointer"
                   id="handTutorial"
                 ></span>
                 <CardProject
                   img={pokedexData.img}
                   imgBackground={pokedexData.imgBackground}
+                  mock={pokedexData.mock}
                   repo={pokedexData.repo}
                   title={pokedexData.title}
                   text={pokedexData.text}
@@ -309,6 +413,7 @@ function App() {
                 <CardProject
                   img={notesData.img}
                   imgBackground={notesData.imgBackground}
+                  mock={notesData.mock}
                   repo={notesData.repo}
                   title={notesData.title}
                   text={notesData.text}
@@ -317,6 +422,7 @@ function App() {
                 <CardProject
                   img={moviesData.img}
                   imgBackground={moviesData.imgBackground}
+                  mock={moviesData.mock}
                   repo={moviesData.repo}
                   title={moviesData.title}
                   text={moviesData.text}
