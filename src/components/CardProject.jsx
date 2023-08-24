@@ -12,6 +12,7 @@ function CardProject( { img,imgBackground, title, text,repo, link }) {
     <div className="cardProject" id={`cardProject-${title}`}>
       <img src={img} alt="logo de pokemon" />
       <h1>{title}</h1>
+
       <div className="circle" id={`circle-${title}`}  ></div>
       <div className="content">
         <h3>{title}</h3>

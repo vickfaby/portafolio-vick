@@ -1,23 +1,23 @@
 @import "vars";
-
+*{
+  box-sizing: border-box;
+}
 .cardProject {
   position: relative;
   color: #fff;
-  width: 32.5rem;
+  width: calc(100vw - 8rem);
   height: 70rem;
   border-radius: 20px;
   display: flex;
   align-items: center;
   transition: 0.1s;
-  margin-right: 0rem;
-  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   border: 1px solid #777;
   background: #fff;
 }
-.cardProject >  img {
+.cardProject > img {
   height: 6rem;
   object-fit: cover;
   z-index: 2;
@@ -25,16 +25,17 @@
   transition: 0.5s;
 }
 
-.cardProject h1{
-  color:#b3b3b3;
+.cardProject h1 {
+  color: #b3b3b3;
 }
+
 .cardProject .circle {
   position: absolute;
   /* top: calc(50% - 10rem); */
   /* left: calc(50% - 10rem); */
   width: 100%;
   height: 100%;
-  border-radius: 2rem;
+  border-radius: 2.5rem;
   overflow: hidden;
   z-index: 1;
   // box-shadow: 10px 10px 20px #929292, -10px -10px 20px #ffffff;
@@ -55,7 +56,7 @@
 .cardProject .content {
   z-index: 0;
   opacity: 0;
-  width: 32rem;
+  width: calc(100vw - 8rem);
 }
 .cardProject .content h3 {
   margin-top: 2rem;
@@ -83,7 +84,6 @@
 
 .cardProject:hover .content {
   opacity: 1;
-  width: 32rem;
   height: 60rem;
   transform: translateY(-18.5rem);
   transition: 0.5s;
@@ -104,13 +104,12 @@
   margin: 1rem 0 2rem 0;
 }
 
-
 .cardProject .content > a:nth-child(3):visited {
-  color:blueviolet;
+  color: blueviolet;
   text-decoration: none;
 }
 
-.cardProject .content >  a:nth-child(5){
+.cardProject .content > a:nth-child(5) {
   position: relative;
   padding: 10px 20px;
   margin: 2rem;
@@ -134,15 +133,15 @@
   transition: 0.5s;
 }
 
-@media (min-width:1024px){
-  .cardProject{
-    width: 48rem ;
+@media (min-width: 1024px) {
+  .cardProject {
+    width: 48rem;
     height: 87rem;
   }
   .cardProject .content {
     width: auto;
   }
-  .cardProject:hover img:nth-child(1){
+  .cardProject:hover img:nth-child(1) {
     transform: translateY(-9rem);
     scale: 2.5;
   }

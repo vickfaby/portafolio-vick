@@ -241,18 +241,115 @@ main .info-projects .projects-me {
 }
 main .info-projects .projects-me-container {
   display: flex;
+  width: calc(100vw - 8rem);
   justify-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin-top: 2rem;
-  padding-right: 1rem;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
+  position: relative;
+  
+}
+
+main .info-projects .projects-me-container >  span:nth-child(2) {
+  position: absolute;
+  top: 80%;
+  left: calc( 50% - 2rem);
+  font-size: 4rem;
+  transform: rotateZ(-20deg);
+  color: #777;
+  animation: hand 2s infinite linear;
+  scale: 2;
+  z-index: 1;
+}
+main .info-projects .projects-me-container >  span:nth-child(1) {
+  position: absolute;
+  top: calc(80% - 2.2rem);
+  left: calc( 50% - 3.5rem);
+  font-size: 4rem;
+  transform: rotateZ(-20deg);
+  color: #c5c5c5;
+  animation: touch-hand 2s infinite linear;
+  scale: 2;
+  opacity: 0;
+  z-index: 1;
+}
+
+@keyframes touch-hand {
+  0% {
+    opacity: 0;
+    transform: translateX(0rem) ;
+  }
+  25% {
+    opacity: 0.2;
+    scale: 1;
+    transform: translateX(7rem) rotateZ(-20deg);
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0rem) rotateZ(-20deg);
+    
+  }
+  75%{
+    opacity: 0.2;
+    scale: 1;
+    transform: translateX(-7rem) rotateZ(-20deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0rem);
+
+  }
+}
+@keyframes hand {
+  0% {
+    scale: 2;
+    transform: translateX(0rem) ;
+  }
+  25% {
+    scale: 1;
+    transform: translateX(7rem) rotateZ(-20deg);
+  }
+  50% {
+    scale: 1;
+    transform: translateX(0rem) rotateZ(-20deg);
+    
+  }
+  75%{
+    scale: 1;
+    transform: translateX(-7rem) rotateZ(-20deg);
+  }
+  100% {
+    scale: 2;
+    transform: translateX(0rem);
+
+  }
 }
 
 main .info-projects .projects-me-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+main .info-projects .projects-me .slide-projects{
+  display: flex;
+}
+main .info-projects .projects-me .slide-projects > button{
+  width: 4rem;
+  height: 10rem;
+  margin-top: calc(50% + 10rem);
+  border: none;
+  background: #777;
+  color: #fff;
+}
+
+// main .info-projects .projects-me-container > button{
+//   position: absolute;
+//   height: 100%;
+//   width: 2rem;
+// }
+// main .info-projects .projects-me-container > button:last-of-type{
+// left:calc(100% - 1rem);
+// }
 footer {
   color: #777;
   background: #e0e0e0;
