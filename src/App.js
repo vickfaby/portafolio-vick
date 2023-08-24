@@ -158,7 +158,7 @@ function App() {
       containerProjects.scrollLeft += delta / 10;
     });
 
-    containerProjects.addEventListener("touch", (Event) => {
+    containerProjects.addEventListener("touchmove", (Event) => {
       console.log("se ejecuta la funcion de containerProjects");
       Event.preventDefault();
       var delta = Event.deltaY;
