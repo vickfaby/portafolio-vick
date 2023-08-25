@@ -109,12 +109,14 @@ main .info-profile .profile-img .profile-photo img {
 main .profile-info {
   width: 100vw;
   // height: 66%;
-  border: 1px solid transparent;
+  // border: 1px solid transparent;
   border-radius: 2rem;
   background: #fff;
   text-align: center;
   font-size: 2rem;
+  position: relative;
 }
+
 main .profile-info .profile-data h4 {
   color: #777;
   font-weight: 100;
@@ -185,7 +187,7 @@ main .profile-info .profile-contact ul li span {
 }
 
 main .info-profile .profile-info .profile-download {
-  position: relative;
+  // position: relative;
 }
 
 main .profile-info .profile-download a {
@@ -241,7 +243,8 @@ main .info-projects .projects-me {
 }
 main .info-projects .projects-me-container {
   display: flex;
-  width: calc(100vw - 8rem);
+  width: calc(100% - 8rem);
+  border-radius: 2rem;
   justify-items: center;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -251,22 +254,22 @@ main .info-projects .projects-me-container {
   z-index: 1;
 }
 
-main .info-projects .projects-me-container >  span:nth-child(1) {
+main .info-projects .projects-me-container > span:nth-child(1) {
   position: absolute;
   top: calc(80% - 1.5rem);
-  left: calc( 50% - 3.2rem);
+  left: calc(50% - 3.2rem);
   font-size: 4rem;
   transform: rotateZ(-20deg);
   color: #c5c5c5;
   animation: touch-hand 3s infinite linear;
   scale: 1;
   z-index: 1;
-} 
+}
 
-main .info-projects .projects-me-container >  span:nth-child(2) {
+main .info-projects .projects-me-container > span:nth-child(2) {
   position: absolute;
   top: 80%;
-  left: calc( 50% - 2rem);
+  left: calc(50% - 2rem);
   font-size: 4rem;
   transform: rotateZ(-20deg);
   color: #777;
@@ -275,13 +278,12 @@ main .info-projects .projects-me-container >  span:nth-child(2) {
   z-index: 1;
 }
 
-
 @keyframes touch-hand {
   0% {
     opacity: 0;
-    transform: translateX(7rem) ;
+    transform: translateX(7rem);
   }
-  24%{
+  24% {
     opacity: 0;
   }
   25% {
@@ -289,88 +291,83 @@ main .info-projects .projects-me-container >  span:nth-child(2) {
     transform: translateX(7rem);
   }
 
-  30%{
+  30% {
     opacity: 0.2;
-    transform: translateX(7rem) ;
+    transform: translateX(7rem);
   }
-  35%{
+  35% {
     opacity: 0.5;
-    transform: translateX(7rem) ;
+    transform: translateX(7rem);
   }
 
-
-  40%{
+  40% {
     opacity: 0.2;
-    transform: translateX(7rem) ;
+    transform: translateX(7rem);
   }
-  45%{
+  45% {
     opacity: 0.5;
-    transform: translateX(7rem) ;
+    transform: translateX(7rem);
   }
 
   60% {
     opacity: 1;
-    transform: translateX(0rem) ;
-    
+    transform: translateX(0rem);
   }
-  75%{
+  75% {
     opacity: 0;
-    transform: translateX(-7rem) ;
+    transform: translateX(-7rem);
   }
   100% {
     opacity: 0;
     transform: translateX(7rem);
-
   }
 }
 @keyframes hand {
   0% {
     scale: 2;
-    transform: translateX(0rem) ;
+    transform: translateX(0rem);
   }
   25% {
     scale: 1;
     transform: translateX(7rem) rotateZ(-20deg);
   }
-  30%{
+  30% {
     scale: 1.2;
     transform: translateX(7rem) rotateZ(-20deg);
   }
-  35%{
+  35% {
     scale: 1;
     transform: translateX(7rem) rotateZ(-20deg);
   }
-  40%{
+  40% {
     scale: 1.2;
     transform: translateX(7rem) rotateZ(-20deg);
   }
-  45%{
+  45% {
     scale: 1;
     transform: translateX(7rem) rotateZ(-20deg);
   }
   60% {
     scale: 1;
     transform: translateX(0rem) rotateZ(-20deg);
-    
   }
-  75%{
+  75% {
     scale: 1;
     transform: translateX(-7rem) rotateZ(-20deg);
   }
   100% {
     scale: 2;
     transform: translateX(0rem);
-
   }
 }
 
 main .info-projects .projects-me-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
-main .info-projects .projects-me .slide-projects{
+main .info-projects .projects-me .slide-projects {
   display: flex;
 }
-main .info-projects .projects-me .slide-projects > button{
+main .info-projects .projects-me .slide-projects > button {
   width: 3rem;
   height: 10rem;
   margin-top: calc(50% + 10rem);
@@ -381,28 +378,20 @@ main .info-projects .projects-me .slide-projects > button{
 }
 
 main .info-projects .projects-me .slide-projects > button:active {
-scale: 2;
+  scale: 2;
 }
 
-main .info-projects .projects-me .slide-projects > button:nth-child(1){
+main .info-projects .projects-me .slide-projects > button:nth-child(1) {
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
   margin-left: 1rem;
 }
-main .info-projects .projects-me .slide-projects > button:nth-child(3){
+main .info-projects .projects-me .slide-projects > button:nth-child(3) {
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
   margin-right: 1rem;
 }
 
-// main .info-projects .projects-me-container > button{
-//   position: absolute;
-//   height: 100%;
-//   width: 2rem;
-// }
-// main .info-projects .projects-me-container > button:last-of-type{
-// left:calc(100% - 1rem);
-// }
 footer {
   color: #777;
   background: #e0e0e0;
@@ -424,12 +413,15 @@ footer p {
   main {
     display: flex;
     height: 100vh;
+    width: max-content;
+    margin: 0 auto;
+    max-width: 1000px;
   }
 
   main .info-profile {
-    width: 45vw;
-    min-width: 45vw;
+    max-width: 38rem;
     padding-left: 1rem;
+    width: 45vw;
   }
   main .info-profile .profile-img {
     width: 100%;
@@ -438,12 +430,28 @@ footer p {
 
   main .profile-info {
     width: 100%;
+    min-height: 75.5rem;
+    border-bottom-right-radius: 0;
   }
+
+  main .profile-info::after {
+    content: "";
+    width: calc(55vw - 1rem);
+    max-width: 46.44rem;
+    height: 14rem;
+    background: #ffffff;
+    position: absolute;
+    top: calc(100% - 14rem);
+    left: 100%;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+  }
+
   main .profile-info .profile-imgTechnologies {
     flex-wrap: wrap;
   }
   main .profile-info .profile-contact ul {
-    flex-direction: column;
+    flex-direction: initial;
     align-items: flex-start;
   }
   main .profile-info .profile-contact ul li {
@@ -453,44 +461,38 @@ footer p {
     margin: 0;
     background: none;
     width: 55vw;
+    max-width: 46.44rem;
+  }
+
+  main .info-projects p {
+    height: 4rem;
   }
   main .info-projects .projects-me-container {
     background: #fff;
     position: relative;
     z-index: 1;
   }
-}
+  main .info-projects .projects-me .slide-projects > button {
+    margin-top: 28rem;
+  }
 
-@media (min-width: 1024px) {
-  main {
-    height: 100vh;
-  }
-  main .info-profile {
-    width: 40vw;
-    min-width: 40vw;
-  }
-  main .info-projects {
-    width: 60vw;
-  }
-  main .info-profile .profile-img {
-    width: 85%;
-    margin: 1rem 0;
-    height: auto;
-  }
-  main .profile-info {
-    width: 85%;
+  main .profile-info .profile-contact {
+    position: absolute;
+    top: calc(100% - 9.5rem );
+    left: calc(100% - 16rem);
+    z-index: 2;
+    width: 40rem;
     margin: 0;
   }
-  main .profile-info .profile-data h2,
-  main .profile-info .profile-data h4 {
-    margin: 0 0 0 auto;
+
+  main .profile-info .profile-download a {
+    left: calc(100% - 15rem + 4rem);
   }
-  main .info-profile .profile-img .profile-photo {
-    top: calc(100% - 8rem);
-    left: -8rem;
+}
+
+@media (min-width: 1200px) {
+  main {
+   // max-width: 50rem;
   }
 
-  footer {
-    margin-top: 20rem;
-  }
 }

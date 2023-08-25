@@ -5,7 +5,7 @@
 .cardProject {
   position: relative;
   color: #fff;
-  width: calc(100vw - 8rem);
+  min-width: 100%;
   height: 64rem;
   border-radius: 20px;
   display: flex;
@@ -19,14 +19,32 @@
 }
 .cardProject > img {
   height: 6rem;
+  /* top: calc(50% - 12rem); */
+  scale: 1.4;
+  position: absolute;
   object-fit: cover;
   z-index: 2;
-  margin-top: calc(50% + 4.5rem);
+  /* margin-top: calc(50% + 4.5rem); */
+  transition: 0.5s;
+  transform: translateY(calc(50% + 12rem));
+}
+
+.cardProject:hover img:nth-child(1) {
+  transition: 0.5s;
+  top: 2rem;
+  scale: 1.5;
+  transform: translateY(0);
+}
+
+.cardProject:hover .content img {
+  width: 100%;
   transition: 0.5s;
 }
 
+
 .cardProject h1 {
   color: #b3b3b3;
+  margin-top: 28rem;
 }
 
 
@@ -49,7 +67,7 @@
   height: 70rem;
   top: 0;
   left: 0;
-  border-radius: 20px;
+  border-radius: 2.5rem;
   z-index: 0;
   opacity: 1;
   transition: 0.5s;
@@ -57,7 +75,8 @@
 .cardProject .content {
   z-index: 0;
   opacity: 0;
-  width: calc(100vw - 8rem);
+  width: 100%;
+  // max-width: calc(100% - 8rem);
 }
 .cardProject .content h3 {
   margin-top: 2rem;
@@ -77,6 +96,7 @@
 .cardProject .content img {
   width: 100%;
   transition: 0.5s;
+  max-width: 28rem;
 }
 
 .cardProject .content p::-webkit-scrollbar {
@@ -85,14 +105,16 @@
 
 .cardProject:hover .content {
   opacity: 1;
-  height: 60rem;
-  transform: translateY(-16.5rem);
+  height: calc(100% - 12rem);
+  /* transform: translateY(-16.5rem); */
   transition: 0.5s;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: #eeeeee;
   padding-bottom: 5rem;
+  position: absolute;
+  top: 7rem;
 }
 
 .cardProject:hover h1 {
@@ -133,36 +155,31 @@
   scale: 2;
 }
 
-.cardProject:hover img:nth-child(1) {
-  transform: translateY(-11rem);
-  transition: 0.5s;
-  scale: 1.5;
-}
-
-.cardProject:hover .content img {
-  width: 100%;
-  transition: 0.5s;
-}
-
-
-@media (min-width: 1024px) {
-  .cardProject {
-    width: 48rem;
-    height: 87rem;
-  }
+@media (min-width: 450px) {
   .cardProject .content {
-    width: auto;
-  }
-  .cardProject:hover img:nth-child(1) {
-    transform: translateY(-9rem);
-    scale: 2.5;
-  }
-  .cardProject:hover .content {
-    width: 48rem;
-    height: 65rem;
-    transform: translateY(-22.5rem);
-  }
-  .cardProject:hover .circle {
-    height: 87rem;
+max-width: 32rem;
   }
 }
+
+
+// @media (min-width: 1024px) {
+//   .cardProject {
+//     width: 48rem;
+//     height: 87rem;
+//   }
+//   .cardProject .content {
+//     width: auto;
+//   }
+//   .cardProject:hover img:nth-child(1) {
+//     transform: translateY(-9rem);
+//     scale: 2.5;
+//   }
+//   .cardProject:hover .content {
+//     width: 48rem;
+//     height: 65rem;
+//     transform: translateY(-22.5rem);
+//   }
+//   .cardProject:hover .circle {
+//     height: 87rem;
+//   }
+// }
