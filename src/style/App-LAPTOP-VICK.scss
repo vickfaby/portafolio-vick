@@ -400,7 +400,6 @@ footer {
   flex-direction: column;
   align-items: center;
   padding: 2.8rem;
-  margin-top: 4rem;
 }
 
 footer p {
@@ -411,13 +410,12 @@ footer p {
 }
 
 @media (min-width: 640px) {
-
   main {
     display: flex;
-    // height: 100vh;
+    height: 100vh;
     width: max-content;
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 1000px;
   }
 
   main .info-profile {
@@ -427,23 +425,8 @@ footer p {
   }
   main .info-profile .profile-img {
     width: 100%;
-    height: calc(45vw - 1rem);
-    max-height: 37rem;
+    height: auto;
   }
-  main .info-profile .profile-img img {
-    height: 100%;
-  }
-
-  main .info-profile .profile-img .profile-photo {
-    width: 80%;
-    height: 80%;
-    top: calc(50% - 40%);
-    left: calc(50% - 40%);
-    border-radius: 50%;
-}
-main .info-profile .profile-img .profile-photo img {
-  border-radius: 50%;
-}
 
   main .profile-info {
     width: 100%;
@@ -454,7 +437,7 @@ main .info-profile .profile-img .profile-photo img {
   main .profile-info::after {
     content: "";
     width: calc(55vw - 1rem);
-    max-width: 122rem;
+    max-width: 46.44rem;
     height: 14rem;
     background: #ffffff;
     position: absolute;
@@ -478,19 +461,12 @@ main .info-profile .profile-img .profile-photo img {
     margin: 0;
     background: none;
     width: 55vw;
-    // max-width: 46.44rem;
+    max-width: 46.44rem;
   }
 
-  main .info-projects .projects-me > p {
+  main .info-projects p {
     height: 4rem;
-    min-height: 7rem;
   }
-
-  main .info-projects .projects-me .slide-projects {
-    display: flex;
-    height: calc(45vw - 23rem + 75.5rem - 14rem);
-    max-height: 76rem;
-}
   main .info-projects .projects-me-container {
     background: #fff;
     position: relative;
@@ -502,33 +478,21 @@ main .info-profile .profile-img .profile-photo img {
 
   main .profile-info .profile-contact {
     position: absolute;
-    top: calc(100% - 9.5rem);
-    left: calc(50vw - 22.5vw + 19rem - 20rem );
+    top: calc(100% - 9.5rem );
+    left: calc(100% - 16rem);
     z-index: 2;
     width: 40rem;
     margin: 0;
   }
 
-  main .profile-info .profile-download > a {
-    left: calc(50vw - 22.5vw + 19rem - 15rem);
+  main .profile-info .profile-download a {
+    left: calc(100% - 15rem + 4rem);
   }
 }
 
-@media (min-width: 900px) {
-  main .profile-info .profile-data p {
-    font-size: 1.8rem;
-}
-main .info-projects p {
-  font-size: 1.8rem;
-}
+@media (min-width: 1200px) {
+  main {
+   // max-width: 50rem;
+  }
 
-}
-
-@media (min-width: 2237px) {
-  main .profile-info .profile-download > a {
-    left: 655.175px;
-}
-main .profile-info .profile-contact {
-  left: 605.175px;
-}
 }
