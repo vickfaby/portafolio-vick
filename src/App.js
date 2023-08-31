@@ -16,9 +16,9 @@ import screenPokedex from "../src/assets/images/screenPokedex.png";
 import screenNotes from "../src/assets/images/screenNotes.png";
 import screenMovies from "../src/assets/images/screenMovies.png";
 
-import mockPokedex from '../src/assets/images/shotsPokemon1.png'
-import mockMovies from '../src/assets/images/shotsMovies.png'
-import mockNotes from '../src/assets/images/shotsNotes.png'
+import mockPokedex from "../src/assets/images/shotsPokemon1.png";
+import mockMovies from "../src/assets/images/shotsMovies.png";
+import mockNotes from "../src/assets/images/shotsNotes.png";
 import { useEffect, useRef, useState } from "react";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
   const pokedexData = {
     title: "Pokedex",
     img: pokemonLogo,
-    mock:mockPokedex,
+    mock: mockPokedex,
     repo: "https://github.com/vickfaby/vick-pokedex",
     imgBackground: screenPokedex,
     text: "This is a project developed in React.js consuming data from a REST API called pokeApi. The purpose of this project is to apply the knowledge learned in React.js",
@@ -47,7 +47,7 @@ function App() {
   const moviesData = {
     title: "Movies",
     img: moviesLogo,
-    mock:mockMovies,
+    mock: mockMovies,
     repo: "https://github.com/vickfaby/consumo-api-rest-movie-practico",
     imgBackground: screenMovies,
     text: "A simple website that keeps you up-to-date on the latest movies and allows you to store your favorites.",
@@ -60,6 +60,7 @@ function App() {
     const nameLogoH1 = document.getElementById("nameLogo");
     const descriptionLogoP = document.getElementById("descriptionLogo");
     const buttonLogo = document.getElementById("buttonLogo");
+    const buttonSection = document.getElementById("buttonSection");
 
     element.style.height = "4rem";
     descriptionLogoP.style.display = "none";
@@ -67,6 +68,8 @@ function App() {
     nameLogoH1.style.height = "4rem";
     buttonLogo.style.opacity = "1";
     buttonLogo.style.transform = "rotate(0deg)";
+    buttonSection.style.animation = "none";
+    buttonSection.style.opacity = "0";
 
     if (element.clientHeight > 160) {
       // element.scrollIntoView();
@@ -138,6 +141,7 @@ function App() {
       const descriptionLogoP = document.getElementById("descriptionLogo");
       const nameLogoH1 = document.getElementById("nameLogo");
       const buttonLogo = document.getElementById("buttonLogo");
+      const buttonSection = document.getElementById("buttonSection");
 
       console.log(`Entra a la funcion y va a poner ${viewport}`);
       element.style.height = viewport;
@@ -146,15 +150,19 @@ function App() {
       nameLogoH1.style.height = "10rem";
       buttonLogo.style.opacity = "0";
       buttonLogo.style.transform = "rotate(180deg)";
+      buttonSection.style.animation = "buttonSection 2s linear infinite";
+      buttonSection.style.animationDelay = "2s";
     };
 
     const element = document.getElementById("titleDiv");
     const buttonLogo = document.getElementById("buttonLogo");
+    const buttonSection = document.getElementById("buttonSection");
     const containerProjects = document.getElementById("projects-me-container");
 
     setViewport(`${element.clientHeight}px`);
     // console.log(`setea al viewport en ${element.clientHeight}px`);
     buttonLogo.addEventListener("click", goUp);
+    buttonSection.addEventListener("click", setFixedBar);
 
     containerProjects.addEventListener("wheel", (Event) => {
       // console.log("se ejecuta la funcion de containerProjects");
@@ -222,6 +230,7 @@ function App() {
         document.getElementById("touchHandTutorial").style.animation =
           "touch-hand 2s infinite linear";
         document.getElementById("handTutorial").style.opacity = "1";
+
         document.getElementById("handTutorial").style.animation =
           "hand 2s infinite linear";
       }
@@ -303,6 +312,7 @@ function App() {
           <h1 id="nameLogo">Vick</h1>
           <p id="descriptionLogo">Frontend Developer</p>
           <span id="buttonLogo" className="fa-solid fa-arrow-up"></span>
+          <span id="buttonSection" className="fa-solid fa-arrow-down"></span>
         </div>
       </section>
 
@@ -385,7 +395,8 @@ function App() {
           <div className="projects-me">
             <h2>Projects</h2>
             <p>
-            The following projects are personal projects that I developed to practice my skills and creativity in UX/UI design.
+              The following projects are personal projects that I developed to
+              practice my skills and creativity in UX/UI design.
             </p>
 
             <div className="slide-projects">
@@ -438,8 +449,35 @@ function App() {
       </main>
 
       <footer>
-        <h3>Created by</h3>
-        <p>Vick</p>
+        <div className="info">
+          <h2>Vick</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            quaerat itaque quisquam nulla fugiat eaque vel ipsa dolorem aliquam
+            id, placeat asperiores hic! Ipsum labore fugiat quo reiciendis sunt.
+            Nihil.
+          </p>
+        </div>
+        <div className="services">
+          <h3>Servicios</h3>
+          <ul>
+            <li>Páginas Web</li>
+            <li>JS Vanilla</li>
+            <li>React</li>
+          </ul>
+        </div>
+        <div className="contact">
+          <div className="contact-social">
+            <span className="fa-brands fa-facebook"></span>
+            <span className="fa-brands fa-twitter"></span>
+            <span className="fa-brands fa-whatsapp"></span>
+            <span className="fa-brands fa-instagram"></span>
+          </div>
+          <div className="contact-cretedBy">
+            <p>Creates By</p>
+            <p>Vick</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
