@@ -62,6 +62,38 @@
   color: #fff;
   left: calc(100% - 5rem);
 }
+.title #buttonSection{
+  cursor: pointer;
+  position: absolute;
+  opacity: 1;
+  transition: 1s;
+  display: flex;
+  height: 4rem;
+  width: 4rem;
+  background: #777;
+  border-radius: 4rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  left: calc( 50vw - 2rem);
+  top: calc( 100vh - 16rem);
+  font-size: 2rem;
+  animation: buttonSection 6s linear infinite;
+  animation-delay: 2s;
+  transition: 2s;
+}
+@keyframes buttonSection {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
 main .info-profile {
   position: relative;
@@ -397,10 +429,11 @@ footer {
   background: #e0e0e0;
   display: flex;
   font-size: 1rem;
-  flex-direction: column;
+  flex-direction:row;
   align-items: center;
   padding: 2.8rem;
   margin-top: 4rem;
+  padding: 10rem;
 }
 
 footer p {
@@ -410,6 +443,46 @@ footer p {
   font-weight: 700;
 }
 
+footer .info {
+  width: 33%;
+}
+.info > h2 {
+  font-family: var(--font-vick);
+  font-weight: 1000;
+}
+.info  > p {
+font-family: var(--font-general);
+font-size: 1.2rem;
+font-weight: 500;
+}
+
+footer .services {
+  width: 33%;
+  padding: 1rem;
+  height: -webkit-fill-available;
+  text-align: center;
+}
+.services > ul {
+  font-size: 1.6rem;
+  margin-left: 2rem;
+}
+.services > ul  >  li {
+  text-align:  left;
+}
+
+footer .contact {
+  width: 33%;
+}
+
+.contact .contact-social > span {
+font-size: 2rem;
+margin-left: 1rem;
+}
+.contact .contact-cretedBy > p:nth-child(1) {
+font-family: var(--font-general);
+font-weight: 500;
+}
+.contact .contact-cretedBy > h2
 @media (min-width: 640px) {
 
   main {
@@ -512,7 +585,15 @@ main .info-profile .profile-img .profile-photo img {
   main .profile-info .profile-download > a {
     left: calc(50vw - 22.5vw + 19rem - 15rem);
   }
+  footer {
+    height: calc( 100vh - 37rem - 75.5rem - 1rem);
+  }
 }
+// @media(min-width: 693px ) {
+//   footer {
+//     height: calc( 100vh - 37rem - 75.5rem - 4rem);
+//   }
+// }
 
 @media (min-width: 900px) {
   main .profile-info .profile-data p {
@@ -531,4 +612,5 @@ main .info-projects p {
 main .profile-info .profile-contact {
   left: 605.175px;
 }
+
 }
