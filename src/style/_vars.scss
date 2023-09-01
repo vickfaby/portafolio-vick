@@ -9,7 +9,7 @@
     font-size: 62.5%;
     justify-content: center;
     align-items: center;
-    background-color: #eeeeee;
+    // background-color: #eeeeee;
     overflow: hidden;
     max-width: 100vw;
   } 
@@ -20,11 +20,32 @@
 }
 
   :root {
-    --color-marca-vickfaby: #1aa0ab;
+    /* for app */
+    --color-background-general: #eeeeee;
+    --color-marca-vickfaby: #000000;
+    --color-after-tittle: rgba(255, 255, 255, 0.05);
+    --color-text-general: #777777;
+    --color-white: #ffffff;
+    --color-blue: #3559b7;
+    --color-tutorial-animation: #c5c5c5;
+    --color-footer: #e0e0e0;
     
+    --color-background-general-dark: #12222c;
+    --color-marca-vickfaby-dark: #ececec;
+    --color-text-general-dark: #aaaaaa;
+    --color-text-title-dark: #f9f9f9;
+    --color-after-tittle-dark: rgba(255, 255, 255, 0.05);
+    --color-white-dark: #ffffff;
+    --color-blue-dark: #3559b7;
+    --color-tutorial-animation-dark: #c5c5c5;
+    --color-footer-dark: #e0e0e0;
+
+    --font-vick:'Borel', cursive;
+
+    /* for card*/
     --color-background: #12222c;
     --color-background-cards:#1D2B35;
-    --font-vick:'Borel', cursive;
-    --varh: 100vh;
-    --varw: 100vw;
+    --color-card:#3559b7;
+    --color-card-dark:#000000;
+
   }

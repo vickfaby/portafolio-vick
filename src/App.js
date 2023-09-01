@@ -70,6 +70,7 @@ function App() {
     buttonLogo.style.transform = "rotate(0deg)";
     buttonSection.style.animation = "none";
     buttonSection.style.opacity = "0";
+    buttonSection.style.display = "none";
 
     if (element.clientHeight > 160) {
       // element.scrollIntoView();
@@ -150,6 +151,7 @@ function App() {
       nameLogoH1.style.height = "10rem";
       buttonLogo.style.opacity = "0";
       buttonLogo.style.transform = "rotate(180deg)";
+      buttonSection.style.display = "flex";
       buttonSection.style.animation = "buttonSection 2s linear infinite";
       buttonSection.style.animationDelay = "2s";
     };
@@ -305,6 +307,8 @@ function App() {
     });
   }, [viewport]);
 
+
+
   return (
     <div className="App">
       <section>
@@ -452,14 +456,14 @@ function App() {
         <div className="info">
           <h2>Vick</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            quaerat itaque quisquam nulla fugiat eaque vel ipsa dolorem aliquam
-            id, placeat asperiores hic! Ipsum labore fugiat quo reiciendis sunt.
-            Nihil.
+            In this project you can find <br />
+            - Slider made with JS. <br />
+            - CSS animation.  <br />
+            - Movil first. <br />
           </p>
         </div>
         <div className="services">
-          <h3>Servicios</h3>
+          <h2>Servicios</h2>
           <ul>
             <li>Páginas Web</li>
             <li>JS Vanilla</li>
@@ -474,7 +478,7 @@ function App() {
             <span className="fa-brands fa-instagram"></span>
           </div>
           <div className="contact-cretedBy">
-            <p>Creates By</p>
+            <p>Created By</p>
             <p>Vick</p>
           </div>
         </div>

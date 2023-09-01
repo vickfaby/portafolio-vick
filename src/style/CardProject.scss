@@ -15,7 +15,7 @@
   flex-direction: column;
   cursor: pointer;
   border: 1px solid #777;
-  background: #fff;
+  background: var(--color-card);
 }
 .cardProject > img {
   height: 6rem;
@@ -43,7 +43,7 @@
 
 
 .cardProject h1 {
-  color: #b3b3b3;
+  color: var(--color-white);
   margin-top: 28rem;
 }
 
@@ -164,6 +164,12 @@ height: auto;
 @media (min-width: 450px) {
   .cardProject .content {
 max-width: 32rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .cardProject{
+    background: var(--color-card-dark);
   }
 }
 
