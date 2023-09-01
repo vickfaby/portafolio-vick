@@ -3,6 +3,22 @@
 body {
   background: var(--color-background-general);
 }
+
+.languageSelectorContainer {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.languajeSelector-button {
+  margin-right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-general);
+  font-size: 2rem;
+}
 .title {
   position: relative;
   height: calc(100vh);
@@ -633,12 +649,6 @@ footer .contact .contact-cretedBy {
     text-align: left;
   }
 }
-// @media(min-width: 693px ) {
-//   footer {
-//     height: calc( 100vh - 37rem - 75.5rem - 4rem);
-//   }
-// }
-
 @media (min-width: 900px) {
   main .profile-info .profile-data p {
     font-size: 1.8rem;
@@ -655,6 +665,10 @@ footer .contact .contact-cretedBy {
   footer {
     padding: 10rem 30%;
   }
+  .title > h1 {
+    font-size: 20rem;
+    height: 20rem;
+  }
 }
 
 @media (min-width: 2237px) {
@@ -669,6 +683,9 @@ footer .contact .contact-cretedBy {
 @media (prefers-color-scheme: dark) {
   body {
     background: var(--color-background-general-dark);
+  }
+  .languajeSelector-button {
+    color: var(--color-text-title-dark);
   }
   .title > h1 {
     color: var(--color-marca-vickfaby-dark);
@@ -711,12 +728,12 @@ footer .contact .contact-cretedBy {
   }
 
   main .info-projects h2 {
-color: var(--color-text-title-dark);
-}
+    color: var(--color-text-title-dark);
+  }
 
-main .info-projects .projects-me > p {
-  color: var(--color-text-general-dark);
-}
+  main .info-projects .projects-me > p {
+    color: var(--color-text-general-dark);
+  }
   footer {
     background: #000000;
     color: var(--color-text-general-dark);

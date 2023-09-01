@@ -20,6 +20,12 @@ import mockPokedex from "../src/assets/images/shotsPokemon1.png";
 import mockMovies from "../src/assets/images/shotsMovies.png";
 import mockNotes from "../src/assets/images/shotsNotes.png";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+const languages = {
+  en: { nativeName: "English" },
+  es: { nativeName: "Español" },
+};
 
 function App() {
   const [viewport, setViewport] = useState("vacio");
@@ -307,14 +313,31 @@ function App() {
     });
   }, [viewport]);
 
-
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="App">
+      <div className="languageSelectorContainer">
+        {Object.keys(languages).map((lng) => (
+          <button
+            className="languajeSelector-button"
+            key={lng}
+            style={{
+              fontWeight: i18n.resolvedLanguage === lng ? "bold" : "normal",
+            }}
+            type="submit"
+            onClick={() => i18n.changeLanguage(lng)}
+          >
+            {languages[lng].nativeName}
+          </button>
+        ))}
+      </div>
+
       <section>
         <div className="title" id="titleDiv">
           <h1 id="nameLogo">Vick</h1>
-          <p id="descriptionLogo">Frontend Developer</p>
+          <p id="descriptionLogo">{t("subtitle.part1")}</p>
+
           <span id="buttonLogo" className="fa-solid fa-arrow-up"></span>
           <span id="buttonSection" className="fa-solid fa-arrow-down"></span>
         </div>
@@ -332,7 +355,7 @@ function App() {
           <div className="profile-info">
             <div className="profile-data">
               <h2>Víctor Morales</h2>
-              <h4>Frontend developer</h4>
+              <h4>{t("personalData.subtitle")}</h4>
 
               <div className="profile-imgTechnologies">
                 <img src={html} alt="html logo" />
@@ -342,24 +365,22 @@ function App() {
                 <img src={node} alt="node logo" />
               </div>
               <p>
-                Frontend developer with 1 year of experience developing software
-                in kotlin and React.JS technologies. I have worked in a group to
-                design an app from design to production.
+              {t("personalData.description")}
                 <br />
                 <br />
-                Knowledge of:
+                {t("personalData.knowledge")}
               </p>
               <ul>
-                <li>Javascript</li>
-                <li>React</li>
-                <li>REST API consumption</li>
-                <li>Express</li>
-                <li>Use of figma</li>
+                <li>{t("personalData.knowledge1")}</li>
+                <li>{t("personalData.knowledge2")}</li>
+                <li>{t("personalData.knowledge3")}</li>
+                <li>{t("personalData.knowledge4")}</li>
+                <li>{t("personalData.knowledge5")}</li>
               </ul>
               <br />
-              <p>Experience:</p>
+              <p>{t("personalData.exp")}</p>
               <ul>
-                <li>Global Primex Tecnología - 1yr</li>
+                <li>{t("personalData.exp1")}</li>
               </ul>
             </div>
             <div className="profile-contact">
@@ -389,7 +410,7 @@ function App() {
             <div className="profile-download">
               <a href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
                 <span className="fa-solid fa-download"></span>
-                Donwload cv
+                {t('download.button')}
               </a>
             </div>
           </div>
@@ -397,10 +418,9 @@ function App() {
 
         <div className="info-projects">
           <div className="projects-me">
-            <h2>Projects</h2>
+            <h2>{t('projects.title')}</h2>
             <p>
-              The following projects are personal projects that I developed to
-              practice my skills and creativity in UX/UI design.
+            {t('projects.description')}.
             </p>
 
             <div className="slide-projects">
@@ -422,26 +442,29 @@ function App() {
                   mock={pokedexData.mock}
                   repo={pokedexData.repo}
                   title={pokedexData.title}
-                  text={pokedexData.text}
+                  text={t('projectsData.pokedex.text')}
                   link={pokedexData.link}
-                />
+                  button={t('projectsData.button')}
+                  />
                 <CardProject
                   img={notesData.img}
                   imgBackground={notesData.imgBackground}
                   mock={notesData.mock}
                   repo={notesData.repo}
                   title={notesData.title}
-                  text={notesData.text}
+                  text={t('projectsData.notes.text')}
                   link={notesData.link}
-                />
+                  button={t('projectsData.button')}
+                  />
                 <CardProject
                   img={moviesData.img}
                   imgBackground={moviesData.imgBackground}
                   mock={moviesData.mock}
                   repo={moviesData.repo}
                   title={moviesData.title}
-                  text={moviesData.text}
+                  text={t('projectsData.movies.text')}
                   link={moviesData.link}
+                  button={t('projectsData.button')}
                 />
               </div>
               <button id="goRightProjects">
@@ -456,18 +479,18 @@ function App() {
         <div className="info">
           <h2>Vick</h2>
           <p>
-            In this project you can find <br />
-            - Slider made with JS. <br />
-            - CSS animation.  <br />
-            - Movil first. <br />
+            {t('footer.section1.description')} <br />
+            {t('footer.section1.item1')} <br />
+            {t('footer.section1.item2')} <br />
+            {t('footer.section1.item3')} <br />
           </p>
         </div>
         <div className="services">
-          <h2>Servicios</h2>
+          <h2>{t('footer.section2.description')}</h2>
           <ul>
-            <li>Páginas Web</li>
-            <li>JS Vanilla</li>
-            <li>React</li>
+            <li>{t('footer.section2.item1')}</li>
+            <li>{t('footer.section2.item2')}</li>
+            <li>{t('footer.section2.item3')}</li>
           </ul>
         </div>
         <div className="contact">
@@ -478,7 +501,7 @@ function App() {
             <span className="fa-brands fa-instagram"></span>
           </div>
           <div className="contact-cretedBy">
-            <p>Created By</p>
+            <p>{t('footer.section3.item1')}</p>
             <p>Vick</p>
           </div>
         </div>

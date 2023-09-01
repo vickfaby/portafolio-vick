@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "../style/CardProject.scss";
 import shotsPokemons from  '../assets/images/shotsPokemon.png'
 
-function CardProject( { img,imgBackground,mock, title, text,repo, link }) {
+function CardProject( { img,imgBackground,mock, title, text,repo, link, button }) {
 
   useEffect(()=>{
     document.getElementById(`circle-${title}`).style.backgroundImage = `url(${imgBackground})`
@@ -27,7 +27,7 @@ function CardProject( { img,imgBackground,mock, title, text,repo, link }) {
           Github
           </a>
         <img src={mock} alt="" />
-        <a href={link} rel="noreferrer" target="_blank">Visit</a>
+        <a href={link} rel="noreferrer" target="_blank">{button}</a>
       </div>
     </div>
   );
