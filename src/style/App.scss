@@ -6,11 +6,15 @@ body {
 
 .languageSelectorContainer {
   position: absolute;
-  top: 1.5rem;
+  // top: 1.5rem;
+  height: 2rem;
   left: 2rem;
   display: flex;
   align-items: center;
   z-index: 1;
+}
+.languageSelectorContainer > button {
+  font-size: 1.2rem;
 }
 .languajeSelector-button {
   margin-right: 1rem;
@@ -545,6 +549,10 @@ footer .contact .contact-cretedBy {
     width: max-content;
     margin: 0 auto;
     max-width: 1600px;
+  }
+
+  .languageSelectorContainer > button {
+    font-size: 2rem;
   }
 
   main .info-profile {
