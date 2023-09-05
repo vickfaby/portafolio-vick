@@ -25,7 +25,11 @@ i18n
           },
           personalData:{
             subtitle:'Frontend developer',
-            description:'Frontend developer with 1 year of experience developing software in kotlin and React.JS technologies. I have worked in a group to design an app from design to production.',
+            description:{
+              part1:'Desarrollador con una sólida base en la creación de experiencias digitales que agreguen valor a usuario.',
+              
+              part2:' Creo en el trabajo en equipo y apoyo el uso de IA para mejorar la eficiencia en la resolución de problemas.',
+            },
             knowledge:'Knowledge of:',
             knowledge1:'JavaScript',
             knowledge2:'ReactJS',
@@ -81,7 +85,11 @@ i18n
           },
           personalData:{
             subtitle:'Desarrollador frontend',
-            description:'Desarrollador frontend con un año de experiencia desarrollando software en tecnologías como kotlin y React.JS. He trabajado en grupo desarrollando una app desde el diseño hasta producción',
+            description:{
+              part1:'Enfocado en el desarrollo de experiencias digitales intuitivas centradas en el usuario para agregar valor a tu app ó tu página web.',
+
+              part2:' Creo en el trabajo en equipo y apoyo el uso de IA para mejorar la eficiencia en la resolución de problemas.',
+            },
             knowledge:'Conocimiento en:',
             knowledge1:'JavaScript',
             knowledge2:'ReactJS',
@@ -92,15 +100,19 @@ i18n
             exp1:'Global Primex Tecnología - 1año',
           },
           projects:{
-            title:'Projectos',
-            description:'Los siguientes son proyectos personales que he desarrollado para practicar mis conocimientos y creatividad en la experiencia de ususario y la interfaz de usuario.',
+            title:'Que puedo aportar a tu empresa?',
+            description:{
+              part1:'-Aporte de ideas de mejoramiento para tu app o página web en función de las necesidades de tu empresa.',
+              part2:'-Desarrollo de interfaces de usuario intuitivas basadas en trabajo en equipo o individual.',
+              part3:'Por otra parte, en los siguientes proyectos e incluso en esta misma página web, puedes notar los conocimientos aplicados en el desarrollo de las interfaces de usuario, las cuales se destacan por su  manejo intuitivo y su funcionalidad con un diseño aplicado muy acertado a cada situación.'
+            },
           },
           download:{
             button:'Descargar CV'
           },
           projectsData:{
             pokedex:{
-              text:'Este es un proyecto desarrollado en ReactJS comsumiendo información desde una API REST llamada pokeAPI. El propósito des este proyecto es aplicar los conocimientos aprendidos sobre ReactJS'
+              text:'Este es un proyecto desarrollado en ReactJS consumiendo información desde una API REST llamada pokeAPI. El propósito des este proyecto es aplicar los conocimientos aprendidos sobre ReactJS'
             },
             notes:{
               text:'Esta página web, desarrollada con ReactJS, tiene la funcionalidad de crear, leer y editar notas de manera intuitiva, aplicandolas técnicas de una intuitiva y responsiva experiencia de usuario.'

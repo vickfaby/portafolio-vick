@@ -1,7 +1,8 @@
 import "./style/App.scss";
+import React from 'react';
+
 import photoPerfil from "../src/assets/images/photo_perfil.jpeg";
 import photoPort from "../src/assets/images/photo_port.jpeg";
-import CardProject from "./components/CardProject";
 import js from "../src/assets/images/js.png";
 import html from "../src/assets/images/html.png";
 import css from "../src/assets/images/css.png";
@@ -19,10 +20,21 @@ import screenMovies from "../src/assets/images/screenMovies.png";
 import mockPokedex from "../src/assets/images/shotsPokemon1.png";
 import mockMovies from "../src/assets/images/shotsMovies.png";
 import mockNotes from "../src/assets/images/shotsNotes.png";
+
+import CardProject from "./components/CardProject";
+
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-const languages = {
+type Language = {
+  nativeName: string
+}
+
+type Languages = {
+  [key: string]: Language;
+}
+
+const languages: Languages = {
   en: { nativeName: "English" },
   es: { nativeName: "Español" },
 };
@@ -62,23 +74,26 @@ function App() {
 
   const setFixedBar = () => {
     // console.log(document.documentElement.scrollTop);
-    const element = document.getElementById("titleDiv");
-    const nameLogoH1 = document.getElementById("nameLogo");
-    const descriptionLogoP = document.getElementById("descriptionLogo");
-    const buttonLogo = document.getElementById("buttonLogo");
-    const buttonSection = document.getElementById("buttonSection");
+    const element: HTMLElement | null = document.getElementById("titleDiv");
+    const nameLogoH1: HTMLElement | null = document.getElementById("nameLogo");
+    const descriptionLogoP: HTMLElement | null =
+      document.getElementById("descriptionLogo");
+    const buttonLogo: HTMLElement | null =
+      document.getElementById("buttonLogo");
+    const buttonSection: HTMLElement | null =
+      document.getElementById("buttonSection");
 
-    element.style.height = "4rem";
-    descriptionLogoP.style.display = "none";
-    nameLogoH1.style.fontSize = "4rem";
-    nameLogoH1.style.height = "4rem";
-    buttonLogo.style.opacity = "1";
-    buttonLogo.style.transform = "rotate(0deg)";
-    buttonSection.style.animation = "none";
-    buttonSection.style.opacity = "0";
-    buttonSection.style.display = "none";
+    element!.style.height = "4rem";
+    descriptionLogoP!.style.display = "none";
+    nameLogoH1!.style.fontSize = "4rem";
+    nameLogoH1!.style.height = "4rem";
+    buttonLogo!.style.opacity = "1";
+    buttonLogo!.style.transform = "rotate(0deg)";
+    buttonSection!.style.animation = "none";
+    buttonSection!.style.opacity = "0";
+    buttonSection!.style.display = "none";
 
-    if (element.clientHeight > 160) {
+    if (element!.clientHeight > 160) {
       // element.scrollIntoView();
       document.documentElement.scrollTo(0, 1);
     }
@@ -90,20 +105,20 @@ function App() {
     });
   });
 
-  const refLeft = useRef();
-  const refRight = useRef();
+  const refLeft = useRef<boolean | null>();
+  const refRight = useRef<boolean | null>();
 
   useEffect(() => {
     const moveToLeft = () => {
-      const container = document.getElementById("projects-me-container");
+      const container: HTMLElement | null = document.getElementById("projects-me-container");
       // console.log(
-      //   `El scrollWidth entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
+      //   `El scrollWidth entra como ${container.scrollLeft} y el width del container es ${containerProjects!.clientWidth}`
       // );
-      const newScroll =
-        parseFloat(container.scrollLeft) +
-        parseFloat(containerProjects.clientWidth);
+      const newScroll: number =
+        container!.scrollLeft +
+        containerProjects!.clientWidth; // SE REALIZÓ CORECCION, SE USABA PARSEFLOAT
       // console.log(`El newScroll es: ${newScroll}`);
-      container.scrollTo({
+      container!.scrollTo({
         top: 0,
         left: newScroll,
         behavior: "smooth",
@@ -113,13 +128,15 @@ function App() {
       const container = document.getElementById("projects-me-container");
       // console.log(container.scrollLeft);
       // console.log(
-      //   `El scrollProjects entra como ${container.scrollLeft} y el width del container es ${containerProjects.clientWidth}`
+      //   `El scrollProjects entra como ${container.scrollLeft} y el width del container es ${containerProjects!.clientWidth}`
       // );
       const newScroll =
-        parseFloat(container.scrollLeft) -
-        parseFloat(containerProjects.clientWidth);
+        container!.scrollLeft -
+        containerProjects!.clientWidth;
+        // parseFloat(container.scrollLeft) -
+        // parseFloat(containerProjects!.clientWidth);
       // console.log(`El newScroll es: ${newScroll}`);
-      container.scrollTo({
+      container!.scrollTo({
         top: 0,
         left: newScroll,
         behavior: "smooth",
@@ -131,12 +148,12 @@ function App() {
     const buttonRightProjects = document.getElementById("goRightProjects");
 
     if (!refLeft.current) {
-      buttonRightProjects.addEventListener("click", moveToLeft);
+      buttonRightProjects!.addEventListener("click", moveToLeft);
       refLeft.current = true;
     }
 
     if (!refRight.current) {
-      buttonLeftProjects.addEventListener("click", moveToRight);
+      buttonLeftProjects!.addEventListener("click", moveToRight);
       refRight.current = true;
     }
   }, []);
@@ -144,22 +161,22 @@ function App() {
   useEffect(() => {
     const goUp = () => {
       console.log("Se activó GoUP()");
-      const element = document.getElementById("titleDiv");
-      const descriptionLogoP = document.getElementById("descriptionLogo");
-      const nameLogoH1 = document.getElementById("nameLogo");
-      const buttonLogo = document.getElementById("buttonLogo");
-      const buttonSection = document.getElementById("buttonSection");
+      const element: HTMLElement | null = document.getElementById("titleDiv");
+      const descriptionLogoP: HTMLElement | null = document.getElementById("descriptionLogo");
+      const nameLogoH1: HTMLElement | null = document.getElementById("nameLogo");
+      const buttonLogo: HTMLElement | null = document.getElementById("buttonLogo");
+      const buttonSection: HTMLElement | null = document.getElementById("buttonSection");
 
       console.log(`Entra a la funcion y va a poner ${viewport}`);
-      element.style.height = viewport;
-      descriptionLogoP.style.display = "block";
-      nameLogoH1.style.fontSize = "10rem";
-      nameLogoH1.style.height = "10rem";
-      buttonLogo.style.opacity = "0";
-      buttonLogo.style.transform = "rotate(180deg)";
-      buttonSection.style.display = "flex";
-      buttonSection.style.animation = "buttonSection 2s linear infinite";
-      buttonSection.style.animationDelay = "2s";
+      element!.style.height = viewport;
+      descriptionLogoP!.style.display = "block";
+      nameLogoH1!.style.fontSize = "10rem";
+      nameLogoH1!.style.height = "10rem";
+      buttonLogo!.style.opacity = "0";
+      buttonLogo!.style.transform = "rotate(180deg)";
+      buttonSection!.style.display = "flex";
+      buttonSection!.style.animation = "buttonSection 2s linear infinite";
+      buttonSection!.style.animationDelay = "2s";
     };
 
     const element = document.getElementById("titleDiv");
@@ -167,37 +184,39 @@ function App() {
     const buttonSection = document.getElementById("buttonSection");
     const containerProjects = document.getElementById("projects-me-container");
 
-    setViewport(`${element.clientHeight}px`);
+    setViewport(`${element!.clientHeight}px`);
     // console.log(`setea al viewport en ${element.clientHeight}px`);
-    buttonLogo.addEventListener("click", goUp);
-    buttonSection.addEventListener("click", setFixedBar);
+    buttonLogo!.addEventListener("click", goUp);
+    buttonSection!.addEventListener("click", setFixedBar);
 
-    containerProjects.addEventListener("wheel", (Event) => {
-      // console.log("se ejecuta la funcion de containerProjects");
+    containerProjects!.addEventListener("wheel", (Event) => {
+      // console.log("se ejecuta la funcion de containerProjects!");
       Event.preventDefault();
       var delta = Event.deltaY;
-      containerProjects.scrollLeft += delta / 10;
-      document.getElementById("touchHandTutorial").style.opacity = "0";
-      document.getElementById("touchHandTutorial").style.animation = "none";
-      document.getElementById("handTutorial").style.opacity = "0";
+      containerProjects!.scrollLeft += delta / 10;
+      const handTutorialTouch: HTMLElement | null = document.getElementById("touchHandTutorial");
+      const handTutorial: HTMLElement | null = document.getElementById("handTutorial");
+      handTutorialTouch!.style.opacity = "0";
+      handTutorialTouch!.style.animation = "none";
+      handTutorial!.style.opacity = "0";
 
       if (
-        containerProjects.scrollLeft > 10 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth - 80
+        containerProjects!.scrollLeft > 10 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth - 80
       ) {
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth,
+          left: containerProjects!.clientWidth,
           behavior: "smooth",
         });
       }
 
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth - 80 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth
+        containerProjects!.scrollLeft > containerProjects!.clientWidth - 80 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth
       ) {
         console.log("se quiere devolver");
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
           left: 0,
           behavior: "smooth",
@@ -205,61 +224,65 @@ function App() {
       }
 
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth + 10 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth * 2 - 80
+        containerProjects!.scrollLeft > containerProjects!.clientWidth + 10 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth * 2 - 80
       ) {
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth * 2,
+          left: containerProjects!.clientWidth * 2,
           behavior: "smooth",
         });
       }
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth * 2 - 80 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth * 2
+        containerProjects!.scrollLeft > containerProjects!.clientWidth * 2 - 80 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth * 2
       ) {
         console.log("se quiere devolver");
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth,
+          left: containerProjects!.clientWidth,
           behavior: "smooth",
         });
       }
     });
 
-    containerProjects.addEventListener("touchmove", () => {
-      if (containerProjects.scrollLeft > 1) {
-        document.getElementById("touchHandTutorial").style.opacity = "0";
-        document.getElementById("touchHandTutorial").style.animation = "none";
-        document.getElementById("handTutorial").style.opacity = "0";
-        document.getElementById("handTutorial").style.animation = "none";
-      } else {
-        document.getElementById("touchHandTutorial").style.opacity = "0.5";
-        document.getElementById("touchHandTutorial").style.animation =
-          "touch-hand 2s infinite linear";
-        document.getElementById("handTutorial").style.opacity = "1";
+    containerProjects!.addEventListener("touchmove", () => {
 
-        document.getElementById("handTutorial").style.animation =
+      const handTutorialTouch: HTMLElement | null = document.getElementById("touchHandTutorial");
+      const handTutorial: HTMLElement | null = document.getElementById("handTutorial");
+
+      if (containerProjects!.scrollLeft > 1) {
+        
+        handTutorialTouch!.style.opacity = "0";
+        handTutorialTouch!.style.animation = "none";
+        handTutorial!.style.opacity = "0";
+        handTutorial!.style.animation = "none";
+      } else {
+        handTutorialTouch!.style.opacity = "0.5";
+        handTutorialTouch!.style.animation =
+          "touch-hand 2s infinite linear";
+        handTutorial!.style.opacity = "1";
+        handTutorial!.style.animation =
           "hand 2s infinite linear";
       }
 
       if (
-        containerProjects.scrollLeft > 10 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth - 80
+        containerProjects!.scrollLeft > 10 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth - 80
       ) {
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth,
+          left: containerProjects!.clientWidth,
           behavior: "smooth",
         });
       }
 
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth - 80 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth
+        containerProjects!.scrollLeft > containerProjects!.clientWidth - 80 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth
       ) {
         console.log("se quiere devolver");
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
           left: 0,
           behavior: "smooth",
@@ -267,23 +290,23 @@ function App() {
       }
 
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth + 10 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth * 2 - 80
+        containerProjects!.scrollLeft > containerProjects!.clientWidth + 10 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth * 2 - 80
       ) {
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth * 2,
+          left: containerProjects!.clientWidth * 2,
           behavior: "smooth",
         });
       }
       if (
-        containerProjects.scrollLeft > containerProjects.clientWidth * 2 - 80 &&
-        containerProjects.scrollLeft < containerProjects.clientWidth * 2
+        containerProjects!.scrollLeft > containerProjects!.clientWidth * 2 - 80 &&
+        containerProjects!.scrollLeft < containerProjects!.clientWidth * 2
       ) {
         console.log("se quiere devolver");
-        containerProjects.scrollTo({
+        containerProjects!.scrollTo({
           top: 0,
-          left: containerProjects.clientWidth,
+          left: containerProjects!.clientWidth,
           behavior: "smooth",
         });
       }
@@ -365,7 +388,10 @@ function App() {
                 <img src={node} alt="node logo" />
               </div>
               <p>
-              {t("personalData.description")}
+                {t("personalData.description.part1")}
+                <br />
+                <br />
+                {t("personalData.description.part2")}
                 <br />
                 <br />
                 {t("personalData.knowledge")}
@@ -410,7 +436,7 @@ function App() {
             <div className="profile-download">
               <a href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
                 <span className="fa-solid fa-download"></span>
-                {t('download.button')}
+                {t("download.button")}
               </a>
             </div>
           </div>
@@ -418,15 +444,19 @@ function App() {
 
         <div className="info-projects">
           <div className="projects-me">
-            <h2>{t('projects.title')}</h2>
+            <h2>{t("projects.title")}</h2>
             <p>
-            {t('projects.description')}.
+              {t("projects.description.part1")}
+              <br />
+              <br />
+              {t("projects.description.part2")}
+              <br />
+              <br />
+              {t("projects.description.part3")}
             </p>
 
             <div className="slide-projects">
-              <button id="goLeftProjects">
-                <span className="fa-solid fa-arrow-left"></span>
-              </button>
+                <span id="goLeftProjects" className="fa-solid fa-arrow-left"></span>
               <div className="projects-me-container" id="projects-me-container">
                 <span
                   className="fa-regular fa-circle-dot "
@@ -442,34 +472,32 @@ function App() {
                   mock={pokedexData.mock}
                   repo={pokedexData.repo}
                   title={pokedexData.title}
-                  text={t('projectsData.pokedex.text')}
+                  text={t("projectsData.pokedex.text")}
                   link={pokedexData.link}
-                  button={t('projectsData.button')}
-                  />
+                  button={t("projectsData.button")}
+                />
                 <CardProject
                   img={notesData.img}
                   imgBackground={notesData.imgBackground}
                   mock={notesData.mock}
                   repo={notesData.repo}
                   title={notesData.title}
-                  text={t('projectsData.notes.text')}
+                  text={t("projectsData.notes.text")}
                   link={notesData.link}
-                  button={t('projectsData.button')}
-                  />
+                  button={t("projectsData.button")}
+                />
                 <CardProject
                   img={moviesData.img}
                   imgBackground={moviesData.imgBackground}
                   mock={moviesData.mock}
                   repo={moviesData.repo}
                   title={moviesData.title}
-                  text={t('projectsData.movies.text')}
+                  text={t("projectsData.movies.text")}
                   link={moviesData.link}
-                  button={t('projectsData.button')}
+                  button={t("projectsData.button")}
                 />
               </div>
-              <button id="goRightProjects">
-                <span className="fa-solid fa-arrow-right"></span>
-              </button>
+                <span id="goRightProjects" className="fa-solid fa-arrow-right"></span>
             </div>
           </div>
         </div>
@@ -479,18 +507,18 @@ function App() {
         <div className="info">
           <h2>Vick</h2>
           <p>
-            {t('footer.section1.description')} <br />
-            {t('footer.section1.item1')} <br />
-            {t('footer.section1.item2')} <br />
-            {t('footer.section1.item3')} <br />
+            {t("footer.section1.description")} <br />
+            {t("footer.section1.item1")} <br />
+            {t("footer.section1.item2")} <br />
+            {t("footer.section1.item3")} <br />
           </p>
         </div>
         <div className="services">
-          <h2>{t('footer.section2.description')}</h2>
+          <h2>{t("footer.section2.description")}</h2>
           <ul>
-            <li>{t('footer.section2.item1')}</li>
-            <li>{t('footer.section2.item2')}</li>
-            <li>{t('footer.section2.item3')}</li>
+            <li>{t("footer.section2.item1")}</li>
+            <li>{t("footer.section2.item2")}</li>
+            <li>{t("footer.section2.item3")}</li>
           </ul>
         </div>
         <div className="contact">
@@ -501,7 +529,7 @@ function App() {
             <span className="fa-brands fa-instagram"></span>
           </div>
           <div className="contact-cretedBy">
-            <p>{t('footer.section3.item1')}</p>
+            <p>{t("footer.section3.item1")}</p>
             <p>Vick</p>
           </div>
         </div>
