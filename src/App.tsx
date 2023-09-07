@@ -21,6 +21,8 @@ import mockPokedex from "../src/assets/images/shotsPokemon1.png";
 import mockMovies from "../src/assets/images/shotsMovies.png";
 import mockNotes from "../src/assets/images/shotsNotes.png";
 
+import shotTask1 from "../src/assets/images/taskfeeder1.jpg"
+import shotTask2 from "../src/assets/images/taskfeeder2.jpg"
 import CardProject from "./components/CardProject";
 
 import { useEffect, useRef, useState } from "react";
@@ -83,7 +85,8 @@ function App() {
     const buttonSection: HTMLElement | null =
       document.getElementById("buttonSection");
 
-    element!.style.height = "4rem";
+    element!.style.height = "6rem";
+    element!.style.background = "var(--color-after-tittle)";
     descriptionLogoP!.style.display = "none";
     nameLogoH1!.style.fontSize = "4rem";
     nameLogoH1!.style.height = "4rem";
@@ -133,8 +136,8 @@ function App() {
       const newScroll =
         container!.scrollLeft -
         containerProjects!.clientWidth;
-        // parseFloat(container.scrollLeft) -
-        // parseFloat(containerProjects!.clientWidth);
+      // parseFloat(container.scrollLeft) -
+      // parseFloat(containerProjects!.clientWidth);
       // console.log(`El newScroll es: ${newScroll}`);
       container!.scrollTo({
         top: 0,
@@ -167,8 +170,9 @@ function App() {
       const buttonLogo: HTMLElement | null = document.getElementById("buttonLogo");
       const buttonSection: HTMLElement | null = document.getElementById("buttonSection");
 
-      console.log(`Entra a la funcion y va a poner ${viewport}`);
+      console.log(`Entra a la función y va a poner ${viewport}`);
       element!.style.height = viewport;
+      element!.style.background = "none";
       descriptionLogoP!.style.display = "block";
       nameLogoH1!.style.fontSize = "10rem";
       nameLogoH1!.style.height = "10rem";
@@ -252,7 +256,7 @@ function App() {
       const handTutorial: HTMLElement | null = document.getElementById("handTutorial");
 
       if (containerProjects!.scrollLeft > 1) {
-        
+
         handTutorialTouch!.style.opacity = "0";
         handTutorialTouch!.style.animation = "none";
         handTutorial!.style.opacity = "0";
@@ -408,6 +412,22 @@ function App() {
               <ul>
                 <li>{t("personalData.exp1")}</li>
               </ul>
+              <br />
+              <br />
+              <div className="achievements">
+
+                <h3>{t("personalData.achievements.title")}</h3>
+                <p>
+                  {t("personalData.achievements.description")}
+                </p>
+                <br />
+                <div className="shots">
+                  <img src={shotTask1} alt="" />
+                  <img src={shotTask2} alt="" />
+                </div>
+                <br />
+                <a href="https://play.google.com/store/apps/details?id=mx.global.primex.domoteck.taskfeeder"><span className="fa-solid fa-link"></span>{t("personalData.achievements.link")}</a>
+              </div>
             </div>
             <div className="profile-contact">
               <ul>
@@ -444,19 +464,27 @@ function App() {
 
         <div className="info-projects">
           <div className="projects-me">
-            <h2>{t("projects.title")}</h2>
-            <p>
-              {t("projects.description.part1")}
-              <br />
-              <br />
-              {t("projects.description.part2")}
-              <br />
-              <br />
-              {t("projects.description.part3")}
-            </p>
+            <div className="textInformation">
+              <h3>{t("projects.title1")}</h3>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("projects.description1.part1")}
+                <br />
+                <br />
+                <span className="fa-solid fa-check"></span>{t("projects.description1.part2")}
+                <br />
+                <br />
+                <span className="fa-solid fa-check"></span>{t("projects.description1.part3")}
+                <br />
+                <br />
+              </p>
+              <h3>{t("projects.title2")}</h3>
+              <p>
+                {t("projects.description2.part1")}
+              </p>
+            </div>
 
             <div className="slide-projects">
-                <span id="goLeftProjects" className="fa-solid fa-arrow-left"></span>
+              <span id="goLeftProjects" className="fa-solid fa-arrow-left"></span>
               <div className="projects-me-container" id="projects-me-container">
                 <span
                   className="fa-regular fa-circle-dot "
@@ -497,7 +525,7 @@ function App() {
                   button={t("projectsData.button")}
                 />
               </div>
-                <span id="goRightProjects" className="fa-solid fa-arrow-right"></span>
+              <span id="goRightProjects" className="fa-solid fa-arrow-right"></span>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ body {
 
 .languageSelectorContainer {
   position: absolute;
-  // top: 1.5rem;
+  top: 2rem;
   height: 2rem;
   left: 2rem;
   display: flex;
@@ -30,11 +30,10 @@ body {
 }
 .title {
   position: relative;
-  height: calc(100vh);
-  // min-height: 130px;
+  height: 100vh;
   max-height: 100vh;
   display: flex;
-  margin-top: 1rem;
+  padding: 1rem 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -181,7 +180,7 @@ main .profile-info .profile-data h4 {
   color: var(--color-text-general);
   font-weight: 100;
 }
-main .profile-info .profile-data p {
+main .profile-info .profile-data > p {
   color: var(--color-text-general);
   text-align: start;
   font-size: 1.6rem;
@@ -203,6 +202,30 @@ main .profile-info .profile-data ul li {
   display: flex;
   text-align: start;
 }
+.achievements > h3{ 
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.achievements > p{ 
+  text-align: left;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.achievements > a{ 
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.shots {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-around;
+}
+.shots > img {
+width: 40%;
+}
+
 main .profile-info .profile-imgTechnologies {
   margin: 4rem 0rem;
   display: flex;
@@ -290,11 +313,11 @@ main .info-projects {
   font-size: 2rem;
   // padding: 2rem 2rem 8rem 2rem;
 }
-main .info-projects h2 {
-  font-size: 3rem;
+main .textInformation > h3 {
+  // font-size: 3rem;
   margin-left: 2rem;
 }
-main .info-projects p {
+main .textInformation > p {
   color: var(--color-text-general);
   font-size: 1.6rem;
   margin: 3rem 2rem 4rem 2rem;
@@ -688,7 +711,7 @@ main .profile-info {
 
 
 @media (min-width: 900px) {
-  main .profile-info .profile-data p {
+  main .profile-info .profile-data > p {
     font-size: 1.8rem;
   }
   main .info-projects p {
@@ -768,6 +791,15 @@ main .profile-info {
   main .profile-info {
     background: var(--color-after-tittle);
   }
+  .achievements > h3 { 
+    color: var(--color-white) ;
+  }
+  .achievements > p { 
+    color: var(--color-text-general-dark);
+  }
+  .achievements > a { 
+    color: var(--color-white);
+  }
   main .profile-info::after {
     background: var(--color-after-tittle);
   }
@@ -781,7 +813,7 @@ main .profile-info {
     color: var(--color-text-general-dark);
     font-weight: 100;
   }
-  main .profile-info .profile-data p {
+  main .profile-info .profile-data > p {
     color: var(--color-white);
     text-align: start;
     font-size: 1.6rem;
@@ -799,7 +831,7 @@ main .profile-info {
     color: var(--color-white);
   }
 
-  main .info-projects h2 {
+  main .info-projects h3 {
     color: var(--color-text-title-dark);
   }
 

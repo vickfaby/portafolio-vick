@@ -13,7 +13,7 @@
   transition: 0.1s;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  // cursor: pointer;
   border: 1px solid #777;
   background: var(--color-card-dark);
 }
@@ -85,10 +85,11 @@
   text-transform: capitalize;
 }
 
-.cardProject .content p {
+.cardProject .content > p {
   color: #777;
   max-height: 25rem;
   margin: 1rem;
+  font-size: 1.6rem;
   overflow-y: scroll;
   text-align: center;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
