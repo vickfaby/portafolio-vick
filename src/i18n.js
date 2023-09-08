@@ -130,28 +130,32 @@ i18n
           },
           projectsData: {
             pokedex: {
-              text: "Este es un proyecto desarrollado en ReactJS consumiendo información desde una API REST llamada pokeAPI. El propósito des este proyecto es aplicar los conocimientos aprendidos sobre ReactJS",
+              text: "Consume información desde una API REST la cual proporciona datos de los pokemones y sus evoluciones. El flujo de vistas se realizó con React router y las animaciones de carga con CSS3.",
             },
             notes: {
-              text: "Esta página web, desarrollada con ReactJS, tiene la funcionalidad de crear, leer y editar notas de manera intuitiva, aplicandolas técnicas de una intuitiva y responsiva experiencia de usuario.",
+              text: "Desarrollada con ReactJS, esta web permite crear, leer, editar y eliminar notas mediante una interfaz de usuario de fácil manejo. Incluye iconos importados desde la librería de Font Awesome.",
             },
             movies: {
-              text: "Un sencillo sitio web que te mantiene al tanto de las últimas películas y te permite guardar tus titúlos favoritos.",
+              text: "JavaScript Vanilla fue empleado para crear esta web que te mantiene al tanto de las últimas películas y proporciona una lista de favoritos útil para almacenar los títulos seleccionados por el usuario.",
             },
             button: "Visitar",
           },
           footer: {
             section1: {
-              description: "En este proyecto puedes encontrar:",
-              item1: "- Slider hecho con JS",
-              item2: "- Animación con CSS ",
-              item3: "- Desarrollo Movil first",
+              description: "Este portafolio web incluye funciones y técnicas de desarrollo como:",
+              item1: " Tema claro y oscuro.",
+              item2: " Internacionalización ES/US.",
+              item3: " Slider hecho con JS.",
+              item4: " Animación tutorial.",
+              item5: " Desarrollo Movil first.",
+              item6: " UI enfocada en UX.",
+
             },
             section2: {
               description: "Servicios",
-              item1: "Páginas web",
-              item2: "JS Vanilla",
-              item3: "ReactJS",
+              item1: " Creación de páginas web.",
+              item2: " Diseño de UI.",
+              item3: " Migración de JS a ReactJS.",
             },
             section3: {
               item1: "Creado por",

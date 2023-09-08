@@ -514,15 +514,21 @@ footer p {
 }
 
 footer .info {
-  text-align: center;
+  text-align: start;
 }
 .info > h2 {
   font-family: var(--font-vick);
   font-weight: 1000;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .info > p {
   font-family: var(--font-general);
   font-weight: 400;
+}
+.info > p:nth-child(2) {
+margin-bottom: 2rem;
+// text-align: center;
 }
 
 footer .services {
@@ -542,6 +548,7 @@ footer .services h2 {
 .services > ul > li {
   text-align: left;
   list-style: inside;
+  list-style: none;
 }
 
 footer .contact {

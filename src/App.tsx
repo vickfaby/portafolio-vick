@@ -536,17 +536,32 @@ function App() {
           <h2>Vick</h2>
           <p>
             {t("footer.section1.description")} <br />
-            {t("footer.section1.item1")} <br />
-            {t("footer.section1.item2")} <br />
-            {t("footer.section1.item3")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item1")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item2")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item3")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item4")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item5")} <br />
+          </p>
+          <p>
+            <span className="fa-solid fa-check"></span>{t("footer.section1.item6")} <br />
           </p>
         </div>
         <div className="services">
           <h2>{t("footer.section2.description")}</h2>
           <ul>
-            <li>{t("footer.section2.item1")}</li>
-            <li>{t("footer.section2.item2")}</li>
-            <li>{t("footer.section2.item3")}</li>
+            <li><span className="fa-solid fa-check"></span>{t("footer.section2.item1")}</li>
+            <li><span className="fa-solid fa-check"></span>{t("footer.section2.item2")}</li>
+            <li><span className="fa-solid fa-check"></span>{t("footer.section2.item3")}</li>
           </ul>
         </div>
         <div className="contact">
