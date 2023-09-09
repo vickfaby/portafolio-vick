@@ -143,11 +143,11 @@ i18n
           footer: {
             section1: {
               description: "Este portafolio web incluye funciones y técnicas de desarrollo como:",
-              item1: " Tema claro y oscuro.",
-              item2: " Internacionalización ES/US.",
-              item3: " Slider hecho con JS.",
+              item1: " Diseño Mobile first.",
+              item3: " Tema claro y oscuro.",
+              item2: " Internacionalización.",
               item4: " Animación tutorial.",
-              item5: " Desarrollo Movil first.",
+              item5: " Slider hecho con JS.",
               item6: " UI enfocada en UX.",
 
             },
@@ -156,6 +156,7 @@ i18n
               item1: " Creación de páginas web.",
               item2: " Diseño de UI.",
               item3: " Migración de JS a ReactJS.",
+              item4: " Diseño responsive.",
             },
             section3: {
               item1: "Creado por",

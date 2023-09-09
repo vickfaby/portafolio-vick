@@ -210,6 +210,7 @@ main .profile-info .profile-data ul li {
   text-align: left;
   font-size: 1.6rem;
   margin-bottom: 1rem;
+  color: var(--color-text-general);
 }
 
 .achievements > a{ 
@@ -508,19 +509,23 @@ footer {
 
 footer p {
   margin-top: 0.4rem;
-  font-family: var(--font-vick);
+  font-family: var(--font-general);
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 footer .info {
-  text-align: start;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .info > h2 {
   font-family: var(--font-vick);
   font-weight: 1000;
+  font-size: 4rem;
+  height: 5rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 .info > p {
   font-family: var(--font-general);
@@ -529,6 +534,15 @@ footer .info {
 .info > p:nth-child(2) {
 margin-bottom: 2rem;
 // text-align: center;
+}
+footer .info > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+}
+footer .info > ul > li {
+  list-style: none;
 }
 
 footer .services {
@@ -582,6 +596,8 @@ footer .contact .contact-cretedBy {
 }
 .contact .contact-cretedBy > p:nth-child(2) {
   margin-left: 1rem;
+  font-family: var(--font-vick);
+  font-weight: bolder;
 }
 @media (min-width: 640px) {
   main {
@@ -623,7 +639,7 @@ footer .contact .contact-cretedBy {
 
   main .profile-info {
     width: 100%;
-    min-height: 103.5rem;
+    min-height: 139.5rem;
     border-bottom-right-radius: 0;
   }
 
@@ -631,10 +647,10 @@ footer .contact .contact-cretedBy {
     content: "";
     width: calc(55vw - 2.5rem);
     max-width: 122rem;
-    height: 14rem;
+    height: 22rem;
     background: var(--color-white);
     position: absolute;
-    top: calc(100% - 14rem);
+    top: calc(100% - 22rem);
     left: 100%;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
@@ -698,12 +714,31 @@ footer .contact .contact-cretedBy {
     text-align: left;
   }
 }
+
+@media (min-width: 650px) {
+  main .profile-info::after {
+    height: 27rem;
+    top: calc(100% - 27rem);
+}
+}
+
+@media (min-width: 753px) {
+  main .profile-info::after {
+        height: 38rem;
+    top: calc(100% - 38rem);
+}
+}
+
 @media (min-width: 826px) {
   main .info-projects .projects-me > p {
     height: 25rem;
 }
 main .profile-info {
-  min-height: 97.5rem;
+  min-height: 126.5rem;
+}
+main .profile-info::after {
+  height: 27rem;
+top: calc(100% - 27rem);
 }
 }
 @media (min-width: 843px) {
@@ -729,11 +764,16 @@ main .profile-info {
     height: 30rem;
 }
 main .profile-info {
-  min-height: 101.5rem;
+  min-height: 127.5rem;
 }
   footer {
     padding: 10rem;
   }
+
+  main .profile-info::after {
+    height: 24rem;
+    top: calc(100% - 24rem);
+}
 }
 
 @media (min-width: 924px) {
@@ -741,7 +781,7 @@ main .profile-info {
     height: 28rem;
 }
 main .profile-info {
-  min-height: 96.5rem;
+  min-height: 127.5rem;
 }
 }
 
@@ -750,13 +790,13 @@ main .profile-info {
     height: 24rem;
 }
 main .profile-info {
-  min-height: 92.5rem;
+  min-height: 127.5rem;
 }
 }
 
 @media (min-width: 1200px) {
   footer {
-    padding: 10rem 30%;
+    padding: 10rem 10%;
   }
   .title > h1 {
     font-size: 20rem;
@@ -764,12 +804,26 @@ main .profile-info {
   }
 }
 
+@media (min-width: 1094px) {
+  main .profile-info::after {
+    height: 28rem;
+    top: calc(100% - 28rem);
+}
+}
+
 @media (min-width: 1494px) {
   main .info-projects .projects-me > p {
     height: 17rem;
 }
 main .profile-info {
-  min-height: 85.5rem;
+  min-height: 125.5rem;
+}
+}
+
+@media (min-width: 1500px) {
+  main .profile-info::after {
+    height: 35rem;
+    top: calc(100% - 35rem);
 }
 }
 
@@ -821,10 +875,16 @@ main .profile-info {
     font-weight: 100;
   }
   main .profile-info .profile-data > p {
-    color: var(--color-white);
+    color: var(--color-text-general-dark);
     text-align: start;
     font-size: 1.6rem;
     font-weight: 400;
+  }
+  main .profile-info .profile-data > p:nth-child(5) {
+    color: var(--color-white);
+  }
+  main .profile-info .profile-data > p:nth-child(8) {
+    color: var(--color-white);
   }
   main .profile-info .profile-data ul li {
     color: var(--color-text-general-dark);

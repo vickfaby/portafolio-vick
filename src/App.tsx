@@ -1,28 +1,6 @@
 import "./style/App.scss";
 import React from 'react';
 
-import photoPerfil from "../src/assets/images/photo_perfil.jpeg";
-import photoPort from "../src/assets/images/photo_port.jpeg";
-import js from "../src/assets/images/js.png";
-import html from "../src/assets/images/html.png";
-import css from "../src/assets/images/css.png";
-import react from "../src/assets/images/react.png";
-import node from "../src/assets/images/node.png";
-
-import pokemonLogo from "../src/assets/images/pokemon.png";
-import notesLogo from "../src/assets/images/notesLogo.png";
-import moviesLogo from "../src/assets/images/movies.png";
-
-import screenPokedex from "../src/assets/images/screenPokedex.png";
-import screenNotes from "../src/assets/images/screenNotes.png";
-import screenMovies from "../src/assets/images/screenMovies.png";
-
-import mockPokedex from "../src/assets/images/shotsPokemon1.png";
-import mockMovies from "../src/assets/images/shotsMovies.png";
-import mockNotes from "../src/assets/images/shotsNotes.png";
-
-import shotTask1 from "../src/assets/images/taskfeeder1.jpg"
-import shotTask2 from "../src/assets/images/taskfeeder2.jpg"
 import CardProject from "./components/CardProject";
 
 import { useEffect, useRef, useState } from "react";
@@ -41,35 +19,57 @@ const languages: Languages = {
   es: { nativeName: "Español" },
 };
 
+const images = {
+  photoPort:'https://previews.dropbox.com/p/thumb/ACAxHPH0k-WI5ehXuvuZdQH5Tc1p-bfCCtrFLXyyP_S8Tko2MfD9e8AxOLxzza5l3TbPfc-ieIdhwpP2gRUgALylU3CFFDjzDKih3Z216-V0YgLvaoi46FDXDOsSZlFfTbaYZyLaDESgzZrziY_6yVs3qGUZDQLOXUnuTtX0lbBVdvvck2xZRZu8_k2UTbC2udHR7EUrRrmXRpoXYhaEWHpidFctR_fHd8qU9763V9mJvQzlgbue-3fWI9RqcRvarUrl1RFcGAzosqLqQtze14EYX0AET9sR1-NtNvoAesCUon2qzA82hSsfqo6rQkBrf4Ala-GzTyqJSL_TTtMWv4QE/p.jpeg',
+
+  photoProfile:'https://previews.dropbox.com/p/thumb/ACC8doofZr6fM521xTTW0D66YMXuArsbPnMJ1LErQxDRIo7xajBkwVAehUf2DwyDpkT_Uu9VfcQRgJeRxh7RMIW2tFWR8rto5UN_phXpxR2mQB5wC4CbvOmkWCy4bGErIe_D1AUf40YBQwTfHS8PRI26ReEueMpY6NuPG9vMlGQNHEjd1zMJB3adJJdxnHbc68IkdT1UGWiB1rO8ISUMse_FzD0rvSLZGHYcROBfyTynfLuSIFqqcIazCT3OKJmU8WFuSmyhF7nzgNJ4LSMvcbeXMXo4prkbVMo9j3SvlsITDqtExjXR_gOnbDBS9DDYwLiUPoMx3Gk6H8iBG4CPdVVl/p.jpeg',
+  html:'https://previews.dropbox.com/p/thumb/ACDdK7rJCmDtaQgbRRe3VGElR0W-QUufEFbraE1DDJ9WmthGhI73siqeWgDhv-I58P13MEdBsi2RYUB-MkmO3BL2kbtkZV7ne84swp3tRY3PN5YWtPvw3emzWIiLKUuPwqwYbiKvv4lDWOyfOTNYx4pCVgf1UpGF5Ogy8VLKuRNUjQjYwigsv_0XWrHIuwakioW0uzlZVLi4IjqHDvH8wIyChj6yRZBH0Cy0EL4xZnZib0SMXgLkpn2QTw0uWYRHepD9_Hp2Hm0BAK72qNKYRKhQkkly5za4Q-8txsR4VxyFisa3I2RAEwEjfPKy2nPywIlOx495aZn-2eJg41pQ7yUM/p.png',
+  css:'https://previews.dropbox.com/p/thumb/ACCgVAr_QZmY5uM_tBg51I22pgnIav2wQe8DJGLHTXj_eoGzvaplGOuAQcAuPvunrzB1WUoG-Bqm7eg0JKGKIfhAPMdhBRyNbkxI-Q_4p9DqLE-zAZMmaqK9_zqLjM99-ek6ebUVAM8KaF5RM8nqJUGZOKszcxoRUXRZg7ghFkgrobDBjtnCbWCzLYBwa4DHi2EDYZuMuIJEJptQAy7SiVSvPtMrQf8WNxzwbILloM4Y1Jyk5FoK3uUN4ES_2mJbRY9Wj_DCDtT2TRv4GGRAiDmo-xomSc26LZmS39VzgEiODPCocEquKC8X3jAUSXjgaofl7YFVvBIg8BT-mm6kxA3u/p.png',
+  js:'https://previews.dropbox.com/p/thumb/ACAO_y81zm8sikFeENfR-6UQa1sG6xlkM0DBc-m4GlApvrY-I7LNfXQnhasDpEbTOdvhWvRu6ST67klt0LFCQIVKpYIN7I9FMnRkCQ4gFqIuFG8Sdym-wikktOkhl2m7s6YCcPXL4uAV0jSlHGnlPVLpHyE0relTByp3ko6szkxnr-WpNo9pNDAdaF0OlP80Qb-JLyyKwN6pBr8tDpXElLmAl2XfEVHj0fkZyUipftGrO3N0803RlJKL1rXRxnWwRiQGJbhhc8EwUVUhwukyokiSxkVDULNuaH0rcIOipUcYoExDZ5PROU9KcKoCu8qPs8HEmBgMwgoMwZAMtuqzcgjk/p.png',
+  react:'https://previews.dropbox.com/p/thumb/ACBqgJoC7nnvVTBidVDwD8Wrmz6JUCgdIjgqTMZfdyARw_yarJBAPTeofwi8-7Qv1XsSlIQFffaJ0iU0pvHxEmXkMGrx-gahXnoiU3_EqIzg1WaJ8OJTwk1I-Qy-D7A0MYftMv9vCqJ0TCD-JMh4gEgu7c4MAnePYbmxZmqX7h1vo54_kCEoil2ElUJWE994KlZdQJ-MWJwQjNCIcaeKmJir2YDOIIyucYWbVQbNyG8ZADK3eHwIPR3YOcaqRM0kPqXgZYvIEDkvQ1VWgFvn1au5ewqV2oRkqpiNtT97Uw0NSrNPBAxElnfZSLH0RHVpNHO5r5W7B79H3kZVaWWyMRnC/p.png',
+  node:'https://previews.dropbox.com/p/thumb/ACCE95aEm5GKxadHolyhE5nXvlmFFQO_99E5voJXi-U1_j_2YgPawdZkpGiyTsE5c1VQj5NptjRDhPdRg9nkEEkVq63vYgFX1_hcVPnSlssHidQtD8jETfEGiofuWgq2ZcG4mbF0is_8QWC-3IbY6pRNLpFIk1-xmqbYw4rbihOov6m-6MV4pjb_gQi8hyYGN2UeMy2gHE2QtharzeuTbvFpiT2EhqEkwSlxlUhP5pFtBUCzsR2AtEzT8VfkkeGrA55Z5tJ8suMM0vO7jjzbLEJAFjYBRXOSQq5ZKHrxFoFFhkoxVZ3Vz0zh7TX9nvpmSmyq8eIYzshgvuo96h0hPHYQ/p.png',
+  screenshotAchievement1:'https://previews.dropbox.com/p/thumb/ACCjyF3mIRn_cZaCgb1wytR26BlIdJYqxCsUbjruFSsBsBDuTjeacp3Iyh3WOEhWVjl2E3PHor3w8yLQqdIaX5itupKObus0n7XtFHpGd7Xtlbu-g4QkEddPOTko0V93x1eZy_BJJhcU_-vMGJu6fS-Vd-Zb_ArGSPGtoLhQBL-glCR2Wqb0pRJMT5ICxwJAn61vFm-Hs2Ghypmz0xdIufJkKuxmsN5zurTlgGVPBlaee7oRL6DNMYafbZNuFKC7qFcUlLm2D56yjr8qu8Y_d8tR-U8qrlc1i_DNEezcOjo_avV4AgpBjssJejyH3b-OsajilvdwS5DmrrDW2bkbmEcB/p.jpeg',
+  screenshotAchievement2:'https://previews.dropbox.com/p/thumb/ACCuEXpS3G6fB6UuE7Q9y3qOR-1gF2yCJGl17zB6CAuyB4tbdlnISEB1NARImmA6sMzQsg99h6_VhRnh2gGWJ4IxRhhxpMQYPqHb47hINL2PJXasx6sY5jXo-zSAKkeeo9D9r0SstUVycxevrhuESM9TQhO_ppNj_XKw1ZOB_3HUamXg7ytLsAwMZxtyxskl8BqUZ9vDhGZxgNg2rBBrTEk1zeFoSUJjUiQpvBM2A5AqPW2745Oism4da2foWcFWtDO3CP2KdnMhRLlyhBh1Kq3b4XJo13KKWPqux3GEieoUJHPyr4i0z4OEdEEGl-jbNbljto5YD5Zko8EIdnUerlN8/p.jpeg',
+  pokedexTitle:'https://previews.dropbox.com/p/thumb/ACDDGEieWwU4LKgEKNFxKZN6lf1T-HCANl94JgL9NvlNkgnhBHGEpJwbrKkA7fCMULXwf31jZiYYRYQbVdFAGymJvLcBT1AnOZiLE76Pb0xyzZZ3BiMTEr6EZJQA5yfSQXgp4o2nx3d2C0jR-ey_B1N2ld7AWdcU45Mw5JKqRLvEcN9oZaoq7P2070ijF-n3120Xt_r_i-sxeEi-ZAfVfglXLDxPRoHQcLi9G41ndymNhVikicXZdQMpfVLnMsbXir-lgLB88kotqbGq9-o8uV5aMKqTpHZvzFoCXdoLGiEE4YyEbokxyyOk6Yt93KomFdvFcUmTVPtQ87v7Er8oz80u/p.png',
+  pokedexMock:'https://previews.dropbox.com/p/thumb/ACDEGjew92-chFLl4FVTV8IzSOGop1gYmFyLmqfIMQnD9x6ybiS7vpFfzkmYNZbLl80tibQSqwGG1f_1qtoW5h8C8jEGxLth9x-A1tXE4nBDXRHKufsUDX15xpqsBCWu62sj6zrvO2vYZ55KlB_WrAkpYW4DFAOzG9a6c4Kv68nN-3Ox4RsKgWtR_UuMdCSCd62xbgMMBjp6byAI4639iIziX8O9j0coQzzuU1Pcj5qNvVMTdi8gQNMck9j6Z19fjXiJXqPSya_Iqj7t3HFUlgn2gJCr-kg_pGd1G8KpsSRDN7sh04RkMRz9EpebHbKeYlcMrkikGHHHATdTC2cU9NBJ/p.png',
+  pokedexBackground:'https://previews.dropbox.com/p/thumb/ACAKjPbO0yMP83KCoUOMBsAgtmIWB3AgjVoPsBPRKnduQcns3FcotRWoqLsUO7LTaVOHXvrnrzPzKQJlB5os0rj4mm1F1bosF59spK9ceVx79Mki9SgU8lZILHZyDU3umNNiwKxhSWcczRC2hajjkWTC1xmdDSZx0h-BeCnMTG4nRYdENLdhIn8dNmb5oMf4OMliitZkKkmnrPRMV2wsq87IVwtSzk8_e-N3spNvVw8c1yUlquXwZbAYrUAKlc197x3K2y3B77U7_NGBfMjXS_VmqGzVuUweBTW0xZyethAl6tCY1oQ2ZcvkuZKfRs67evjMGHfPtgnu3HwRhRjS68v5/p.png',
+  notesTitle:'https://previews.dropbox.com/p/thumb/ACCm3sgjxJu5pLEfT9SR6S8A8WLXkEvB_sf8ZOeoDqaGaS5AQuhpJ7fPsE8iA3J-WGeCILjEEhbpmN-0LmT13cvJhUhzMaDrvpy4V9arLS0gvD0kmtvHCn4ggBl2Qz8LhrEFp0Inec3PlN80Mf5F11RDGo39FknpiivE53DSQr0xURb_fISzvKw5H9tXoiV8fnX8L7ypXRou7RhYOXvPX-j7mmeg5d6v4Tii0FH1P5j7B3xx0fXvKZDDC64Ylm1TxTlM5RIGitlDlrWAx3h-rf1my8-ncNvSA5BieNNJARKgNxaHA-WGtFVEfRbzZHDw4PojtQub47J-DYIKVrAWJvjk/p.png',
+  notesMock:'https://previews.dropbox.com/p/thumb/ACCo7vUbWUwE9uv05UG9jmSQYtwWSQvSsbJyunoZ1433RRBbvw59g9CgEO3KVgLZNJ-LfMT4j8z_FBEyKwWy5_jHdPXtvmB_LruckeYtISkS8VYYl8h4AZK8PCwHhV7T25Myjb4aGkKyEDbOxo8qjfh-gAA1OZnC_eSptVapPn_Q0C-j2WIK-2H8oljN0LPxXQ2dLKRZ8DJznP9qpLrGRHFJ-DHk5CONyYfbuq5x0yG2P3Tv_R_rd4tnvjPOOSitmhreLXFiY2UyLyApwxMO77mFFSkAH3lY-LkPFwlQHMHM5cT1A7F3Q26B9m263w1U0eqVCUouVGgvD3OWraZ1WMOl/p.png',
+  notesBackground:'https://previews.dropbox.com/p/thumb/ACD4VOTA3a7Or2g16A7n6RTeJCpLvyypXtBj-GybK-XqoiegUGtvDaU0tGd_HSrBZJhuSwW6mnjBxN0PBq8qAg4kcsJhUGX__8PRjtbSi-43g7L1iNAtAgajlrD-o5kYuYoiQ-3IsEavpmVtNH8Khwrve7H0SZrVmqQphAD06Asiy_9mVxRFFN1L-jIgjtSBTxJ_9MXixyQC3EqPL20QbGMIqfhjfQNXxWxjlfJva9WamlkR-yfA02HdPUQsNK3fAsEETk5a9__MEe98LK0viaOPuh2n6yg_dSMyh9wC_fZZPcrU37mIfTSVxdo_NzcLkVMydoejK5afDTks7igkww9w/p.png',
+  moviesTitle:'https://previews.dropbox.com/p/thumb/ACACMwu4jGClzTlS0Yu630Ei2VWdgpjGC4CbQR7oMaYQTTlYyVTftihgxC4jsTIaGLLZy2tmmbJRDaMq9-CZDl43iva2VUDG-57s8Wp2q-XjzSc0_9uEN3NDUfdfZCowiHSiT0ixHZ1xA18k7MRF0J-U4Uo1jblNnZ_17u0rB5lhypsCYwW2PoJ1AUN3c5Usjk_jpoNpUnoKO-NXtacigTO0zkbs5coYJ2TS-7f6xDgfIp7ognwGZ44nzJfTUtPFu-Wn8r_c41HkpWb9FH1jcY7QxbPnnSbw2bDw6h5lRjPeDQQFdvYfMf5AjpuoschgiUo-h_clpxeyIim5rWQezYJA/p.png',
+  moviesMock:'https://previews.dropbox.com/p/thumb/ACAY0YtMsVo-8_lEeC6YxW2g04IMGpUrzS5wkQHEDPSecJTKl4DjZi6dTNYIk7RwFhUXFproVu3FGqcq6OFlcSz5JvcYSTpyzPaRevCHcoCei7ducOI2ttc3n2nxBaqH01XTNRrOrmKpns9yvfCXESOlcyuyEaiBdOR5b2sCWl9o6p12FnPma7TPM_hnIepIaakC8o9frMckIEqvlkXBp2CXJ0y53NpSXholOWPoWY117-GHBsbaTidVWlIRGUU5V8sGJcxC6xkMoLRump7oadscMJFSaWEikmkoUvf8mGZAODXMx85PZxViaGoj-xutHYgz-hkuWPUSUqA4RqNjCUSe/p.png',
+  moviesBackground:'https://previews.dropbox.com/p/thumb/ACANzdfXvTBtkG_zRLJM_5UIxAFmMt-aA1MoTLmqK1DBsxtRtZOpppgRMZUk7WHfnHDrnbZYdlZ7cjNa5Z-eTVfS9xwG2M8jYSIZl58KAwaZyE5xjTd5-taCBxS09v7hUgx8eVbkX4nx3hM47ialpY_MQkDNBEk2XH3F_YmMUikUe29epL3BMEmo3Ld4seMUF5OiXROklyi_k3bxFx2gXDe5ZCFmUXRExqMXm7r6VStLvRxzCUt8OnqS2pP45MUCMXKuqHyQ2dE0-T9am3xmiHETfP-GSDdIIIoelJCunx4pdlMoXQYi_LzyvfJGXc9yK622Ry-hFPRL8njDy0h-7TXK/p.png',
+}
+
 function App() {
   const [viewport, setViewport] = useState("vacio");
 
   const pokedexData = {
     title: "Pokedex",
-    img: pokemonLogo,
-    mock: mockPokedex,
+    img: images.pokedexTitle,
+    mock: images.pokedexMock,
     repo: "https://github.com/vickfaby/vick-pokedex",
-    imgBackground: screenPokedex,
+    imgBackground: images.pokedexBackground,
     text: "This is a project developed in React.js consuming data from a REST API called pokeApi. The purpose of this project is to apply the knowledge learned in React.js",
     link: "https://vickfaby.github.io/vick-pokedex/",
   };
 
   const notesData = {
     title: "Notes",
-    img: notesLogo,
-    mock: mockNotes,
+    img: images.notesTitle,
+    mock: images.notesMock,
     repo: "https://github.com/vickfaby/todo-notes",
-    imgBackground: screenNotes,
+    imgBackground: images.notesBackground,
     text: "This webpage, developed with React.js, has the functionality to create, read, and edit notes in an intuitive way, applying techniques of an intuitive and responsive UX.",
     link: "https://vickfaby.github.io/todo-notes/",
   };
 
   const moviesData = {
     title: "Movies",
-    img: moviesLogo,
-    mock: mockMovies,
+    img: images.moviesTitle,
+    mock: images.moviesMock,
     repo: "https://github.com/vickfaby/consumo-api-rest-movie-practico",
-    imgBackground: screenMovies,
+    imgBackground: images.moviesBackground,
     text: "A simple website that keeps you up-to-date on the latest movies and allows you to store your favorites.",
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
   };
@@ -373,9 +373,9 @@ function App() {
       <main>
         <div className="info-profile">
           <div className="profile-img">
-            <img src={photoPort} alt="" />
+            <img src={images.photoPort} alt="" />
             <div className="profile-photo">
-              <img src={photoPerfil} alt="" />
+              <img src={images.photoProfile} alt="" />
             </div>
           </div>
 
@@ -385,11 +385,11 @@ function App() {
               <h4>{t("personalData.subtitle")}</h4>
 
               <div className="profile-imgTechnologies">
-                <img src={html} alt="html logo" />
-                <img src={css} alt="css logo" />
-                <img src={js} alt="javascript logo" />
-                <img src={react} alt="react logo" />
-                <img src={node} alt="node logo" />
+                <img src={images.html} alt="html logo" />
+                <img src={images.css} alt="css logo" />
+                <img src={images.js} alt="javascript logo" />
+                <img src={images.react} alt="react logo" />
+                <img src={images.node} alt="node logo" />
               </div>
               <p>
                 {t("personalData.description.part1")}
@@ -398,8 +398,8 @@ function App() {
                 {t("personalData.description.part2")}
                 <br />
                 <br />
-                {t("personalData.knowledge")}
               </p>
+              <p>{t("personalData.knowledge")}</p>
               <ul>
                 <li>{t("personalData.knowledge1")}</li>
                 <li>{t("personalData.knowledge2")}</li>
@@ -422,8 +422,8 @@ function App() {
                 </p>
                 <br />
                 <div className="shots">
-                  <img src={shotTask1} alt="" />
-                  <img src={shotTask2} alt="" />
+                  <img src={images.screenshotAchievement1} alt="pantallazo de app" />
+                  <img src={images.screenshotAchievement2} alt="pantallazo de app" />
                 </div>
                 <br />
                 <a href="https://play.google.com/store/apps/details?id=mx.global.primex.domoteck.taskfeeder"><span className="fa-solid fa-link"></span>{t("personalData.achievements.link")}</a>
@@ -532,37 +532,55 @@ function App() {
       </main>
 
       <footer>
-        <div className="info">
-          <h2>Vick</h2>
-          <p>
-            {t("footer.section1.description")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item1")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item2")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item3")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item4")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item5")} <br />
-          </p>
-          <p>
-            <span className="fa-solid fa-check"></span>{t("footer.section1.item6")} <br />
-          </p>
-        </div>
+
         <div className="services">
           <h2>{t("footer.section2.description")}</h2>
           <ul>
             <li><span className="fa-solid fa-check"></span>{t("footer.section2.item1")}</li>
             <li><span className="fa-solid fa-check"></span>{t("footer.section2.item2")}</li>
             <li><span className="fa-solid fa-check"></span>{t("footer.section2.item3")}</li>
+            <li><span className="fa-solid fa-check"></span>{t("footer.section2.item4")}</li>
           </ul>
+        </div>
+        <div className="info">
+          <h2>Vick</h2>
+
+          <p>
+            {t("footer.section1.description")} <br />
+          </p>
+          <ul>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item1")} <br />
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item2")} <br />
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item3")} <br />
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item4")} <br />
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item5")} <br />
+              </p>
+            </li>
+            <li>
+              <p>
+                <span className="fa-solid fa-check"></span>{t("footer.section1.item6")} <br />
+              </p>
+            </li>
+          </ul>
+
         </div>
         <div className="contact">
           <div className="contact-social">
