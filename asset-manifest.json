@@ -1,28 +1,13 @@
 {
   "files": {
-    "main.css": "/portafolio-vick/static/css/main.e71bdd47.css",
-    "main.js": "/portafolio-vick/static/js/main.6a2eb3bb.js",
-    "static/media/photo_port.jpeg": "/portafolio-vick/static/media/photo_port.502cccde3881efa74852.jpeg",
-    "static/media/shotsMovies.png": "/portafolio-vick/static/media/shotsMovies.51a76ddbbc76a5292625.png",
-    "static/media/shotsNotes.png": "/portafolio-vick/static/media/shotsNotes.f0528baa30b7508100ba.png",
-    "static/media/shotsPokemon1.png": "/portafolio-vick/static/media/shotsPokemon1.d42b33abb9ee404491ea.png",
-    "static/media/photo_perfil.jpeg": "/portafolio-vick/static/media/photo_perfil.c41ceaa0f7c4e6d621db.jpeg",
-    "static/media/screenMovies.png": "/portafolio-vick/static/media/screenMovies.3bc372bdfc6f19ad11bb.png",
-    "static/media/pokemon.png": "/portafolio-vick/static/media/pokemon.bce450cdfa3e7e06aebb.png",
-    "static/media/screenPokedex.png": "/portafolio-vick/static/media/screenPokedex.bf242d7d87801dab80c5.png",
-    "static/media/screenNotes.png": "/portafolio-vick/static/media/screenNotes.8748bc8cae162744d9b3.png",
-    "static/media/movies.png": "/portafolio-vick/static/media/movies.2b394e07093d051491e2.png",
-    "static/media/react.png": "/portafolio-vick/static/media/react.0708243beac2626fa837.png",
-    "static/media/css.png": "/portafolio-vick/static/media/css.228efe7f36c219645a3e.png",
-    "static/media/js.png": "/portafolio-vick/static/media/js.22a28cd9cc9c3b131424.png",
-    "static/media/html.png": "/portafolio-vick/static/media/html.463061f990f7d8ce0605.png",
-    "static/media/notesLogo.png": "/portafolio-vick/static/media/notesLogo.8e1764a0108748d6dd68.png",
+    "main.css": "/portafolio-vick/static/css/main.a59bde96.css",
+    "main.js": "/portafolio-vick/static/js/main.6806e355.js",
     "index.html": "/portafolio-vick/index.html",
-    "main.e71bdd47.css.map": "/portafolio-vick/static/css/main.e71bdd47.css.map",
-    "main.6a2eb3bb.js.map": "/portafolio-vick/static/js/main.6a2eb3bb.js.map"
+    "main.a59bde96.css.map": "/portafolio-vick/static/css/main.a59bde96.css.map",
+    "main.6806e355.js.map": "/portafolio-vick/static/js/main.6806e355.js.map"
   },
   "entrypoints": [
-    "static/css/main.e71bdd47.css",
-    "static/js/main.6a2eb3bb.js"
+    "static/css/main.a59bde96.css",
+    "static/js/main.6806e355.js"
   ]
 }
