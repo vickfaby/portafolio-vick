@@ -4,6 +4,10 @@ body {
   background: var(--color-background-general);
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 .languageSelectorContainer {
   position: absolute;
   top: 2rem;
@@ -18,7 +22,7 @@ body {
   cursor: pointer;
 }
 .languageSelectorContainer > button:hover {
-  scale:1.2;
+  scale: 1.2;
   text-decoration: underline;
 }
 .languajeSelector-button {
@@ -202,18 +206,18 @@ main .profile-info .profile-data ul li {
   display: flex;
   text-align: start;
 }
-.achievements > h3{ 
+.achievements > h3 {
   text-align: left;
   margin-bottom: 1rem;
 }
-.achievements > p{ 
+.achievements > p {
   text-align: left;
   font-size: 1.6rem;
   margin-bottom: 1rem;
   color: var(--color-text-general);
 }
 
-.achievements > a{ 
+.achievements > a {
   text-align: left;
   margin-bottom: 1rem;
 }
@@ -224,7 +228,9 @@ main .profile-info .profile-data ul li {
   justify-content: space-around;
 }
 .shots > img {
-width: 40%;
+  width: 40%;
+  border-radius: 1rem;
+  border: 1px solid var(--color-text-general);
 }
 
 main .profile-info .profile-imgTechnologies {
@@ -316,7 +322,13 @@ main .info-projects {
 }
 main .textInformation > h3 {
   // font-size: 3rem;
-  margin-left: 2rem;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+main .textInformation > h3:nth-child(1) {
+  margin-left: 4rem;
+  width: fit-content;
 }
 main .textInformation > p {
   color: var(--color-text-general);
@@ -333,7 +345,7 @@ main .info-projects .projects-me {
   width: 100%;
   margin-top: 0rem;
   padding-top: 2rem;
-  padding-right: 1.5rem;
+  // padding-right: 1.5rem; mueve a la izqd para evitar ser tapda por el scroll bar
 }
 main .info-projects .projects-me-container {
   display: flex;
@@ -496,10 +508,10 @@ footer {
   color: var(--color-text-general);
   background: var(--color-footer);
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
   grid-template-columns: 1fr;
   font-size: 1rem;
-  row-gap: 4rem;
+  row-gap: 8rem;
   align-items: start;
   padding: 2.8rem;
   margin-top: 4rem;
@@ -532,8 +544,8 @@ footer .info {
   font-weight: 400;
 }
 .info > p:nth-child(2) {
-margin-bottom: 2rem;
-// text-align: center;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 footer .info > ul {
   display: flex;
@@ -598,6 +610,12 @@ footer .contact .contact-cretedBy {
   margin-left: 1rem;
   font-family: var(--font-vick);
   font-weight: bolder;
+}
+@media (min-width: 380px) {
+  main .textInformation > h3:nth-child(1) {
+    margin: 0 auto;
+    width: fit-content;
+  }
 }
 @media (min-width: 640px) {
   main {
@@ -673,6 +691,11 @@ footer .contact .contact-cretedBy {
     // max-width: 46.44rem;
   }
 
+  main .info-projects .projects-me .textInformation > h3 {
+    margin: 0 0 0 2rem;
+    width: auto;
+  }
+
   main .info-projects .projects-me > p {
     height: 32rem;
     min-height: 7rem;
@@ -719,27 +742,27 @@ footer .contact .contact-cretedBy {
   main .profile-info::after {
     height: 27rem;
     top: calc(100% - 27rem);
-}
+  }
 }
 
 @media (min-width: 753px) {
   main .profile-info::after {
-        height: 38rem;
+    height: 38rem;
     top: calc(100% - 38rem);
-}
+  }
 }
 
 @media (min-width: 826px) {
   main .info-projects .projects-me > p {
     height: 25rem;
-}
-main .profile-info {
-  min-height: 126.5rem;
-}
-main .profile-info::after {
-  height: 27rem;
-top: calc(100% - 27rem);
-}
+  }
+  main .profile-info {
+    min-height: 126.5rem;
+  }
+  main .profile-info::after {
+    height: 27rem;
+    top: calc(100% - 27rem);
+  }
 }
 @media (min-width: 843px) {
   main .profile-info .profile-download > a {
@@ -747,10 +770,8 @@ top: calc(100% - 27rem);
   }
   main .profile-info .profile-contact {
     left: calc(27.5vw + 19rem - 20rem);
+  }
 }
-}
-
-
 
 @media (min-width: 900px) {
   main .profile-info .profile-data > p {
@@ -762,10 +783,10 @@ top: calc(100% - 27rem);
 
   main .info-projects .projects-me > p {
     height: 30rem;
-}
-main .profile-info {
-  min-height: 127.5rem;
-}
+  }
+  main .profile-info {
+    min-height: 127.5rem;
+  }
   footer {
     padding: 10rem;
   }
@@ -773,25 +794,25 @@ main .profile-info {
   main .profile-info::after {
     height: 24rem;
     top: calc(100% - 24rem);
-}
+  }
 }
 
 @media (min-width: 924px) {
   main .info-projects .projects-me > p {
     height: 28rem;
-}
-main .profile-info {
-  min-height: 127.5rem;
-}
+  }
+  main .profile-info {
+    min-height: 127.5rem;
+  }
 }
 
 @media (min-width: 1173px) {
   main .info-projects .projects-me > p {
     height: 24rem;
-}
-main .profile-info {
-  min-height: 127.5rem;
-}
+  }
+  main .profile-info {
+    min-height: 127.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -808,23 +829,23 @@ main .profile-info {
   main .profile-info::after {
     height: 28rem;
     top: calc(100% - 28rem);
-}
+  }
 }
 
 @media (min-width: 1494px) {
   main .info-projects .projects-me > p {
     height: 17rem;
-}
-main .profile-info {
-  min-height: 125.5rem;
-}
+  }
+  main .profile-info {
+    min-height: 125.5rem;
+  }
 }
 
 @media (min-width: 1500px) {
   main .profile-info::after {
     height: 35rem;
     top: calc(100% - 35rem);
-}
+  }
 }
 
 @media (min-width: 2237px) {
@@ -852,13 +873,13 @@ main .profile-info {
   main .profile-info {
     background: var(--color-after-tittle);
   }
-  .achievements > h3 { 
-    color: var(--color-white) ;
+  .achievements > h3 {
+    color: var(--color-white);
   }
-  .achievements > p { 
+  .achievements > p {
     color: var(--color-text-general-dark);
   }
-  .achievements > a { 
+  .achievements > a {
     color: var(--color-white);
   }
   main .profile-info::after {

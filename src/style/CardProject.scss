@@ -39,6 +39,7 @@
 .cardProject:hover .content img {
   width: 100%;
   transition: 0.5s;
+  border-radius: 2rem;
 }
 
 
@@ -95,15 +96,15 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
+.cardProject .content p::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
 .cardProject .content img {
   width: 100%;
   transition: 0.5s;
   max-width: 28rem;
 }
 
-.cardProject .content p::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
-}
 
 .cardProject:hover .content {
   opacity: 1;
@@ -117,6 +118,7 @@
   padding-bottom: 5rem;
   position: absolute;
   top: 7rem;
+  border-radius: 2rem;
 }
 
 .cardProject:hover h1 {

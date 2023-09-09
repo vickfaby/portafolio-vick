@@ -27,10 +27,10 @@ i18n
             subtitle: "Frontend developer",
             description: {
               part1:
-                "Desarrollador con una sólida base en la creación de experiencias digitales que agreguen valor a usuario.",
+                "Developer focused on creating intuitive digital experiences centered around the user.",
 
               part2:
-                " Creo en el trabajo en equipo y apoyo el uso de IA para mejorar la eficiencia en la resolución de problemas.",
+                "I perform efficiently both in individual work and as part of a team, and I incorporate the use of AI to reduce development times.",
             },
             knowledge: "Knowledge of:",
             knowledge1: "JavaScript",
@@ -38,41 +38,63 @@ i18n
             knowledge3: "API REST consumption",
             knowledge4: "Express",
             knowledge5: "Use of Figma",
-            Exp: "Experience:",
-            exp1: "Global Primex Tecnología - 1yr",
+            knowledge6: "B2 English level",
+            exp: "Experience:",
+            exp1: "Global Primex Tecnología - 1year",
+            achievements:{
+              title:'¿What did I develop?',
+              description:'The interface of “Task Feeder”!, an app that allows the feeding of processes of any company, programmed in Kotlin for Global Primex Tecnología.',
+              link:'Visit in Google Play'
+            }
           },
           projects: {
-            title: "Projectos",
-            description:
-              "The following projects are personal projects that I developed to practice my skills and creativity in UX/UI design.",
+            title1: "What can I contribute to your company?",
+            description1: {
+              part1:
+                " Improvement ideas for projects based on the needs of your company.",
+              part2:
+                " Willingness to learn other development technologies in order to increase the quality of your App or website.",
+              part3:
+                " Design of functionalities focused on obtaining the best digital experience for the user.",
+            },
+            title2: "Check out!",
+            description2: {
+              part1:
+                "Both this web portfolio and the following projects are created with the intention of showing my capabilities as a Web developer. These include the use of technologies such as ReactJS and Vanilla JavaScript combined with design techniques that aim to develop an outstanding user interface due to its intuitive handling and functionalities suited to each case.",
+            },
           },
           download: {
             button: "Download CV",
           },
           projectsData: {
             pokedex: {
-              text: "This is a project developed in React.js consuming data from a REST API called pokeApi. The purpose of this project is to apply the knowledge learned in React.js",
+              text: "It consumes information from a REST API which provides data on Pokémon and their evolutions. The view flow was made with React router and the loading animations with CSS3.",
             },
             notes: {
-              text: "This webpage, developed with React.js, has the functionality to create, read, and edit notes in an intuitive way, applying techniques of an intuitive and responsive UX.",
+              text: "Developed with ReactJS, this website allows you to create, read, edit and delete notes through an easy-to-use user interface. Includes icons imported from the Font Awesome library.",
             },
             movies: {
-              text: "A simple website that keeps you up-to-date on the latest movies and allows you to store your favorites.",
+              text: "Vanilla JavaScript was used to create this website that keeps you up to date with the latest movies and provides a useful favorites list to store the titles selected by the user.",
             },
             button: "Visit",
           },
           footer: {
             section1: {
-              description: "In this project you can find:",
-              item1: "- Slider made with JS.",
-              item2: "- CSS animation.",
-              item3: "- Movil first",
+              description: "This web portfolio includes development features and techniques such as:",
+              item1: " 'Mobile first' Design.",
+              item3: " Dark and light mode.",
+              item2: " Internationalization.",
+              item4: " Tutorial animation.",
+              item5: " Slider made with JS.",
+              item6: " UI focused on UX.",
+
             },
             section2: {
               description: "Services",
-              item1: "WebPages",
-              item2: "JS Vanilla",
-              item3: "ReactJS",
+              item1: " Creation of webpages.",
+              item2: " UI Design.",
+              item3: " Migration from JS to ReactJS.",
+              item4: " Responsive design.",
             },
             section3: {
               item1: "Created by",
@@ -101,6 +123,7 @@ i18n
             knowledge3: "Consumo de API REST",
             knowledge4: "Express",
             knowledge5: "Uso de Figma",
+            knowledge6: "Nivel de inglés B2",
             exp: "Experiencia:",
             exp1: "Global Primex Tecnología - 1año",
             achievements:{

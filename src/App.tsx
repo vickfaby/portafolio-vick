@@ -1,4 +1,29 @@
 import "./style/App.scss";
+
+import photo_port from '../src/assets/images/photo_port.jpg'
+import photo_profile from '../src/assets/images/photo_perfil.jpeg'
+
+import html from '../src/assets/images/html.png'
+import css from '../src/assets/images/css.png'
+import js from '../src/assets/images/js.png'
+import react from '../src/assets/images/react.png'
+import node from '../src/assets/images/node.png'
+
+import taskshot1 from '../src/assets/images/taskfeeder1.jpg'
+import taskshot2 from '../src/assets/images/taskfeeder2.jpg'
+
+import pokemonLogo from '../src/assets/images/pokemon.png'
+import pokedexScreen from '../src/assets/images/screenPokedex.png'
+import pokedexMock from '../src/assets/images/shotsPokemon1.png'
+
+import notesLogo from '../src/assets/images/notesLogo.png'
+import notesScreen from '../src/assets/images/screenNotes.png'
+import notesMock from '../src/assets/images/shotsNotes.png'
+
+import moviesLogo from '../src/assets/images/movies.png'
+import moviesScreen from '../src/assets/images/screenMovies.png'
+import moviesMock from '../src/assets/images/shotsMovies.png'
+
 import React from 'react';
 
 import CardProject from "./components/CardProject";
@@ -38,7 +63,7 @@ const images = {
   notesBackground:'https://previews.dropbox.com/p/thumb/ACD4VOTA3a7Or2g16A7n6RTeJCpLvyypXtBj-GybK-XqoiegUGtvDaU0tGd_HSrBZJhuSwW6mnjBxN0PBq8qAg4kcsJhUGX__8PRjtbSi-43g7L1iNAtAgajlrD-o5kYuYoiQ-3IsEavpmVtNH8Khwrve7H0SZrVmqQphAD06Asiy_9mVxRFFN1L-jIgjtSBTxJ_9MXixyQC3EqPL20QbGMIqfhjfQNXxWxjlfJva9WamlkR-yfA02HdPUQsNK3fAsEETk5a9__MEe98LK0viaOPuh2n6yg_dSMyh9wC_fZZPcrU37mIfTSVxdo_NzcLkVMydoejK5afDTks7igkww9w/p.png',
   moviesTitle:'https://previews.dropbox.com/p/thumb/ACACMwu4jGClzTlS0Yu630Ei2VWdgpjGC4CbQR7oMaYQTTlYyVTftihgxC4jsTIaGLLZy2tmmbJRDaMq9-CZDl43iva2VUDG-57s8Wp2q-XjzSc0_9uEN3NDUfdfZCowiHSiT0ixHZ1xA18k7MRF0J-U4Uo1jblNnZ_17u0rB5lhypsCYwW2PoJ1AUN3c5Usjk_jpoNpUnoKO-NXtacigTO0zkbs5coYJ2TS-7f6xDgfIp7ognwGZ44nzJfTUtPFu-Wn8r_c41HkpWb9FH1jcY7QxbPnnSbw2bDw6h5lRjPeDQQFdvYfMf5AjpuoschgiUo-h_clpxeyIim5rWQezYJA/p.png',
   moviesMock:'https://previews.dropbox.com/p/thumb/ACAY0YtMsVo-8_lEeC6YxW2g04IMGpUrzS5wkQHEDPSecJTKl4DjZi6dTNYIk7RwFhUXFproVu3FGqcq6OFlcSz5JvcYSTpyzPaRevCHcoCei7ducOI2ttc3n2nxBaqH01XTNRrOrmKpns9yvfCXESOlcyuyEaiBdOR5b2sCWl9o6p12FnPma7TPM_hnIepIaakC8o9frMckIEqvlkXBp2CXJ0y53NpSXholOWPoWY117-GHBsbaTidVWlIRGUU5V8sGJcxC6xkMoLRump7oadscMJFSaWEikmkoUvf8mGZAODXMx85PZxViaGoj-xutHYgz-hkuWPUSUqA4RqNjCUSe/p.png',
-  moviesBackground:'https://previews.dropbox.com/p/thumb/ACANzdfXvTBtkG_zRLJM_5UIxAFmMt-aA1MoTLmqK1DBsxtRtZOpppgRMZUk7WHfnHDrnbZYdlZ7cjNa5Z-eTVfS9xwG2M8jYSIZl58KAwaZyE5xjTd5-taCBxS09v7hUgx8eVbkX4nx3hM47ialpY_MQkDNBEk2XH3F_YmMUikUe29epL3BMEmo3Ld4seMUF5OiXROklyi_k3bxFx2gXDe5ZCFmUXRExqMXm7r6VStLvRxzCUt8OnqS2pP45MUCMXKuqHyQ2dE0-T9am3xmiHETfP-GSDdIIIoelJCunx4pdlMoXQYi_LzyvfJGXc9yK622Ry-hFPRL8njDy0h-7TXK/p.png',
+  moviesBackground:'https://www.dropbox.com/scl/fi/ejj6xbw21437b703wn1ge/Captura-de-pantalla-2023-08-18-155603.png?rlkey=xnvgnnv3gobcr0xi746pr1rmt&dl=0',
 }
 
 function App() {
@@ -46,30 +71,30 @@ function App() {
 
   const pokedexData = {
     title: "Pokedex",
-    img: images.pokedexTitle,
-    mock: images.pokedexMock,
+    img: pokemonLogo,
+    mock: pokedexMock,
     repo: "https://github.com/vickfaby/vick-pokedex",
-    imgBackground: images.pokedexBackground,
+    imgBackground: pokedexScreen,
     text: "This is a project developed in React.js consuming data from a REST API called pokeApi. The purpose of this project is to apply the knowledge learned in React.js",
     link: "https://vickfaby.github.io/vick-pokedex/",
   };
 
   const notesData = {
     title: "Notes",
-    img: images.notesTitle,
-    mock: images.notesMock,
+    img: notesLogo,
+    mock: notesMock,
     repo: "https://github.com/vickfaby/todo-notes",
-    imgBackground: images.notesBackground,
+    imgBackground: notesScreen,
     text: "This webpage, developed with React.js, has the functionality to create, read, and edit notes in an intuitive way, applying techniques of an intuitive and responsive UX.",
     link: "https://vickfaby.github.io/todo-notes/",
   };
 
   const moviesData = {
     title: "Movies",
-    img: images.moviesTitle,
-    mock: images.moviesMock,
+    img: moviesLogo,
+    mock: moviesMock,
     repo: "https://github.com/vickfaby/consumo-api-rest-movie-practico",
-    imgBackground: images.moviesBackground,
+    imgBackground: moviesScreen,
     text: "A simple website that keeps you up-to-date on the latest movies and allows you to store your favorites.",
     link: "https://vickfaby.github.io/consumo-api-rest-movie-practico/",
   };
@@ -373,9 +398,9 @@ function App() {
       <main>
         <div className="info-profile">
           <div className="profile-img">
-            <img src={images.photoPort} alt="" />
+            <img src={photo_port} alt="" />
             <div className="profile-photo">
-              <img src={images.photoProfile} alt="" />
+              <img src={photo_profile} alt="" />
             </div>
           </div>
 
@@ -385,11 +410,11 @@ function App() {
               <h4>{t("personalData.subtitle")}</h4>
 
               <div className="profile-imgTechnologies">
-                <img src={images.html} alt="html logo" />
-                <img src={images.css} alt="css logo" />
-                <img src={images.js} alt="javascript logo" />
-                <img src={images.react} alt="react logo" />
-                <img src={images.node} alt="node logo" />
+                <img src={html} alt="html logo" />
+                <img src={css} alt="css logo" />
+                <img src={js} alt="javascript logo" />
+                <img src={react} alt="react logo" />
+                <img src={node} alt="node logo" />
               </div>
               <p>
                 {t("personalData.description.part1")}
@@ -406,6 +431,7 @@ function App() {
                 <li>{t("personalData.knowledge3")}</li>
                 <li>{t("personalData.knowledge4")}</li>
                 <li>{t("personalData.knowledge5")}</li>
+                <li>{t("personalData.knowledge6")}</li>
               </ul>
               <br />
               <p>{t("personalData.exp")}</p>
@@ -422,8 +448,8 @@ function App() {
                 </p>
                 <br />
                 <div className="shots">
-                  <img src={images.screenshotAchievement1} alt="pantallazo de app" />
-                  <img src={images.screenshotAchievement2} alt="pantallazo de app" />
+                  <img src={taskshot1} alt="pantallazo de app" />
+                  <img src={taskshot2} alt="pantallazo de app" />
                 </div>
                 <br />
                 <a href="https://play.google.com/store/apps/details?id=mx.global.primex.domoteck.taskfeeder"><span className="fa-solid fa-link"></span>{t("personalData.achievements.link")}</a>
