@@ -2,6 +2,7 @@
 
 body {
   background: var(--color-background-general);
+  font-family: 'Open Sans', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -188,7 +189,6 @@ main .profile-info .profile-data > p {
   color: var(--color-text-general);
   text-align: start;
   font-size: 1.6rem;
-  font-weight: 400;
 }
 
 main .profile-info .profile-data {
@@ -334,6 +334,7 @@ main .textInformation > p {
   color: var(--color-text-general);
   font-size: 1.6rem;
   margin: 3rem 2rem 4rem 2rem;
+  font-weight: 400;
 }
 
 main .info-projects .about-me {
@@ -515,7 +516,7 @@ footer {
   align-items: start;
   padding: 2.8rem;
   margin-top: 4rem;
-  padding: 10rem;
+  padding: 6rem;
   position: relative;
 }
 
@@ -612,6 +613,12 @@ footer .contact .contact-cretedBy {
   font-weight: bolder;
 }
 @media (min-width: 380px) {
+  main .textInformation > h3:nth-child(1) {
+    // margin: 0 auto;
+    width: fit-content;
+  }
+}
+@media (min-width: 445px) {
   main .textInformation > h3:nth-child(1) {
     margin: 0 auto;
     width: fit-content;
@@ -880,7 +887,8 @@ footer .contact .contact-cretedBy {
     color: var(--color-text-general-dark);
   }
   .achievements > a {
-    color: var(--color-white);
+    color: var(--color-text-general-dark);
+    font-weight: 100;
   }
   main .profile-info::after {
     background: var(--color-after-tittle);
@@ -896,19 +904,24 @@ footer .contact .contact-cretedBy {
     font-weight: 100;
   }
   main .profile-info .profile-data > p {
-    color: var(--color-text-general-dark);
+    color: #c9c9c9;
     text-align: start;
     font-size: 1.6rem;
     font-weight: 400;
   }
   main .profile-info .profile-data > p:nth-child(5) {
     color: var(--color-white);
+    font-size: 1.8rem;
+    font-weight: 700;
   }
   main .profile-info .profile-data > p:nth-child(8) {
     color: var(--color-white);
+    font-size: 1.8rem;
+    font-weight: 700;
   }
   main .profile-info .profile-data ul li {
     color: var(--color-text-general-dark);
+    font-size: 1.6rem;
   }
 
   main .profile-info .profile-contact ul li a {
