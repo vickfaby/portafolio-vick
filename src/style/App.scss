@@ -620,6 +620,12 @@ footer .contact .contact-cretedBy {
 }
 @media (min-width: 445px) {
   main .textInformation > h3:nth-child(1) {
+    // margin: 0 auto;
+    width: fit-content;
+  }
+}
+@media (min-width: 509px) {
+  main .textInformation > h3:nth-child(1) {
     margin: 0 auto;
     width: fit-content;
   }
@@ -752,10 +758,21 @@ footer .contact .contact-cretedBy {
   }
 }
 
+@media (min-width: 725px) {
+  main .profile-info {
+    width: 100%;
+    min-height: 132.5rem;
+    border-bottom-right-radius: 0;
+}
+}
+
 @media (min-width: 753px) {
   main .profile-info::after {
     height: 38rem;
     top: calc(100% - 38rem);
+  }
+  main .profile-info {
+    min-height: 142.5rem;
   }
 }
 
