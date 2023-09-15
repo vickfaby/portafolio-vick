@@ -610,10 +610,9 @@ function App() {
         </div>
         <div className="contact">
           <div className="contact-social">
-            <span className="fa-brands fa-facebook"></span>
-            <span className="fa-brands fa-twitter"></span>
-            <span className="fa-brands fa-whatsapp"></span>
-            <span className="fa-brands fa-instagram"></span>
+            <a href="mailto:vickfaby1@gmail.com?subject=Asunto&body=Mensaje"><span className="fa-regular fa-envelope"></span></a>
+            <a href="https://twitter.com/vickfabyM"><span className="fa-brands fa-twitter"></span></a>
+            <a href="https://github.com/vickfaby"><span className="fa-brands fa-github"></span></a>
           </div>
           <div className="contact-cretedBy">
             <p>{t("footer.section3.item1")}</p>
