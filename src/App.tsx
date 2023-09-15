@@ -480,7 +480,8 @@ function App() {
               </ul>
             </div>
             <div className="profile-download">
-              <a href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
+              <a target="_blank"
+                rel="noreferrer" href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
                 <span className="fa-solid fa-download"></span>
                 {t("download.button")}
               </a>
@@ -610,9 +611,12 @@ function App() {
         </div>
         <div className="contact">
           <div className="contact-social">
-            <a href="mailto:vickfaby1@gmail.com?subject=Asunto&body=Mensaje"><span className="fa-regular fa-envelope"></span></a>
-            <a href="https://twitter.com/vickfabyM"><span className="fa-brands fa-twitter"></span></a>
-            <a href="https://github.com/vickfaby"><span className="fa-brands fa-github"></span></a>
+            <a href="mailto:vickfaby1@gmail.com?subject=Asunto&body=Mensaje" target="_blank"
+              rel="noreferrer"><span className="fa-regular fa-envelope"></span></a>
+            <a href="https://twitter.com/vickfabyM" target="_blank"
+              rel="noreferrer"><span className="fa-brands fa-twitter"></span></a>
+            <a href="https://github.com/vickfaby" target="_blank"
+              rel="noreferrer"><span className="fa-brands fa-github"></span></a>
           </div>
           <div className="contact-cretedBy">
             <p>{t("footer.section3.item1")}</p>
