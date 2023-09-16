@@ -335,6 +335,8 @@ main .textInformation > p {
   font-size: 1.6rem;
   margin: 3rem 2rem 4rem 2rem;
   font-weight: 400;
+  position: relative;
+  z-index: 1;
 }
 
 main .info-projects .about-me {
@@ -672,7 +674,7 @@ footer .contact .contact-cretedBy {
 
   main .profile-info {
     width: 100%;
-    min-height: 139.5rem;
+    min-height: 144.5rem;
     border-bottom-right-radius: 0;
   }
 
@@ -763,18 +765,18 @@ footer .contact .contact-cretedBy {
 @media (min-width: 725px) {
   main .profile-info {
     width: 100%;
-    min-height: 132.5rem;
+    min-height: 138.5rem;
     border-bottom-right-radius: 0;
 }
 }
 
 @media (min-width: 753px) {
   main .profile-info::after {
-    height: 38rem;
-    top: calc(100% - 38rem);
+    height: 28rem;
+    top: calc(100% - 28rem);
   }
   main .profile-info {
-    min-height: 142.5rem;
+    min-height: 137.5rem;
   }
 }
 

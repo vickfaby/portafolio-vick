@@ -64,7 +64,8 @@ i18n
             },
           },
           download: {
-            button: "Download CV",
+            button: "Check out my CV",
+            link:"https://docs.google.com/document/d/1EZ0TQq_xhyqHxJ2tqM3Kzwxek-U0pQgzVyN4KIFIsbU/edit?usp=sharing"
           },
           projectsData: {
             pokedex: {
@@ -149,7 +150,8 @@ i18n
             },
           },
           download: {
-            button: "Descargar CV",
+            button: "Revisa mi CV",
+            link:"https://docs.google.com/document/d/1Z7HVfy_AZw7uTOtYRTcFe7qNqqlBw7IPTHYIeuMcRiw/edit?usp=sharing"
           },
           projectsData: {
             pokedex: {

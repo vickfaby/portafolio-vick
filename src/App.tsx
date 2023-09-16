@@ -481,8 +481,8 @@ function App() {
             </div>
             <div className="profile-download">
               <a target="_blank"
-                rel="noreferrer" href="https://drive.google.com/u/0/uc?id=1XSNVVsLbcxAsn2VZ-4uUhuMblB6mSKcf&export=download">
-                <span className="fa-solid fa-download"></span>
+                rel="noreferrer" href={t("download.link")}>
+                <span className="fa-regular fa-eye"></span>
                 {t("download.button")}
               </a>
             </div>
